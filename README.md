@@ -1,4 +1,4 @@
-# Hi there, I’m Stephen Wasswa (a.k.a. Pheny | Spirit-Led)
+# Hi there, I’m Stephen Wasswa (a.k.a. Pheny)
 
 **Born to build. Called to restore. Led by the Spirit.**
 
