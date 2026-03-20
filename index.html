@@ -1,0 +1,1257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- =========================================
+      BASIC SEO + DOCUMENT SETUP
+    ========================================== -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wasswa Makubuya Stephen | Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Wasswa Makubuya Stephen (Pheny), a software engineering student and digital production specialist based in Uganda."
+    />
+    <meta
+      name="keywords"
+      content="Wasswa Stephen, Pheny, portfolio, software engineering student, Uganda, digital production specialist, web design, church media"
+    />
+    <meta name="author" content="Wasswa Makubuya Stephen" />
+    <meta name="theme-color" content="#5a67d8" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Wasswa Makubuya Stephen | Portfolio" />
+    <meta
+      property="og:description"
+      content="Software engineering student and digital production specialist building clear, structured, and scalable digital experiences."
+    />
+    <meta property="og:type" content="website" />
+
+    <style>
+      /* =========================================
+        CSS RESET
+      ========================================== */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      p,
+      ul,
+      li,
+      a {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+
+      /* =========================================
+        ROOT VARIABLES
+      ========================================== */
+      :root {
+        --primary: #5a67d8;
+        --primary-dark: #4753b8;
+        --text-dark: #172033;
+        --text-muted: #5b6475;
+        --bg: #f7f8fc;
+        --surface: #ffffff;
+        --surface-alt: #eef1f9;
+        --border: #dbe1ee;
+        --shadow: 0 14px 40px rgba(23, 32, 51, 0.08);
+        --shadow-soft: 0 8px 24px rgba(23, 32, 51, 0.06);
+        --radius-lg: 24px;
+        --radius-md: 16px;
+        --radius-sm: 12px;
+        --container: 1180px;
+        --transition: 0.3s ease;
+      }
+
+      /* =========================================
+        BASE STYLES
+      ========================================== */
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--bg);
+        color: var(--text-dark);
+        line-height: 1.65;
+      }
+
+      .container {
+        width: min(92%, var(--container));
+        margin-inline: auto;
+      }
+
+      .section {
+        padding: 88px 0;
+      }
+
+      .section-light {
+        background: var(--surface);
+      }
+
+      .section-alt {
+        background: var(--surface-alt);
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 14px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(90, 103, 216, 0.1);
+        color: var(--primary-dark);
+        font-size: 0.9rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+      }
+
+      .section-title {
+        font-size: clamp(1.9rem, 4vw, 2.8rem);
+        line-height: 1.15;
+        margin-bottom: 14px;
+      }
+
+      .section-lead {
+        max-width: 700px;
+        color: var(--text-muted);
+        font-size: 1.05rem;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 36px;
+        align-items: center;
+      }
+
+      .btn-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 20px;
+        border-radius: 999px;
+        font-weight: 700;
+        border: 1px solid transparent;
+        transition: var(--transition);
+        cursor: pointer;
+      }
+
+      .btn-primary {
+        background: var(--primary);
+        color: #fff;
+      }
+
+      .btn-primary:hover,
+      .btn-primary:focus-visible {
+        background: var(--primary-dark);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--primary-dark);
+        border-color: var(--border);
+      }
+
+      .btn-secondary:hover,
+      .btn-secondary:focus-visible {
+        background: #fff;
+      }
+
+      /* =========================================
+        HEADER / NAVIGATION
+      ========================================== */
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(247, 248, 252, 0.92);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(219, 225, 238, 0.7);
+      }
+
+      .nav-wrap {
+        min-height: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+      }
+
+      .brand {
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: var(--text-dark);
+        white-space: nowrap;
+      }
+
+      .brand span {
+        color: var(--primary);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .nav-links a {
+        color: var(--text-dark);
+        font-weight: 600;
+        position: relative;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        transition: width var(--transition);
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a:focus-visible::after {
+        width: 100%;
+      }
+
+      .nav-cta {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .menu-toggle,
+      .menu-close {
+        display: none;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        color: var(--text-dark);
+      }
+
+      .menu-toggle svg,
+      .menu-close svg {
+        width: 28px;
+        height: 28px;
+      }
+
+      /* =========================================
+        MOBILE MENU
+      ========================================== */
+      .mobile-panel {
+        position: fixed;
+        inset: 0;
+        z-index: 1200;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity var(--transition), visibility var(--transition);
+      }
+
+      .mobile-panel.active {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .mobile-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(18, 24, 38, 0.55);
+      }
+
+      .mobile-menu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: min(86vw, 360px);
+        height: 100%;
+        background: var(--surface);
+        box-shadow: -20px 0 50px rgba(23, 32, 51, 0.18);
+        padding: 22px 22px 34px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        transform: translateX(100%);
+        transition: transform var(--transition);
+      }
+
+      .mobile-panel.active .mobile-menu {
+        transform: translateX(0);
+      }
+
+      .mobile-menu-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+      }
+
+      .mobile-nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .mobile-nav-links a {
+        padding: 14px 12px;
+        border-radius: 12px;
+        font-weight: 700;
+      }
+
+      .mobile-nav-links a:hover,
+      .mobile-nav-links a:focus-visible {
+        background: var(--surface-alt);
+      }
+
+      .mobile-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: auto;
+      }
+
+      body.menu-open {
+        overflow: hidden;
+      }
+
+      /* =========================================
+        HERO
+      ========================================== */
+      .hero {
+        padding: 88px 0 70px;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(2.2rem, 5vw, 4.5rem);
+        line-height: 1.05;
+        margin-bottom: 18px;
+      }
+
+      .hero-copy h1 span {
+        color: var(--primary);
+      }
+
+      .hero-copy p {
+        max-width: 640px;
+        color: var(--text-muted);
+        font-size: 1.06rem;
+        margin-bottom: 28px;
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin: 24px 0 30px;
+      }
+
+      .hero-chip {
+        padding: 10px 14px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: #fff;
+        color: var(--text-dark);
+        font-weight: 700;
+        font-size: 0.92rem;
+      }
+
+      .hero-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .hero-image-wrap {
+        position: relative;
+        overflow: hidden;
+        border-radius: calc(var(--radius-lg) - 4px);
+        min-height: 520px;
+        background: #dfe5f4;
+      }
+
+      .hero-image-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* =========================================
+        ABOUT
+      ========================================== */
+      .about-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 28px;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .about-card p + p {
+        margin-top: 16px;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 22px;
+      }
+
+      .stat {
+        background: var(--surface-alt);
+        padding: 18px;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--border);
+      }
+
+      .stat h3 {
+        font-size: 1.4rem;
+        margin-bottom: 6px;
+        color: var(--primary-dark);
+      }
+
+      .stat p {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+      }
+
+      /* =========================================
+        SKILLS / SERVICES
+      ========================================== */
+      .cards {
+        margin-top: 34px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 26px;
+        box-shadow: var(--shadow-soft);
+        transition: transform var(--transition), box-shadow var(--transition);
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+      }
+
+      .card-icon {
+        width: 52px;
+        height: 52px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 14px;
+        background: rgba(90, 103, 216, 0.1);
+        color: var(--primary-dark);
+        margin-bottom: 18px;
+      }
+
+      .card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+      }
+
+      .card p {
+        color: var(--text-muted);
+      }
+
+      /* =========================================
+        EXPERIENCE
+      ========================================== */
+      .timeline {
+        margin-top: 34px;
+        display: grid;
+        gap: 20px;
+      }
+
+      .timeline-item {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 24px;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .timeline-top {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px 18px;
+        margin-bottom: 10px;
+      }
+
+      .timeline-top h3 {
+        font-size: 1.15rem;
+      }
+
+      .timeline-top span {
+        color: var(--primary-dark);
+        font-weight: 700;
+      }
+
+      .timeline-item p {
+        color: var(--text-muted);
+      }
+
+      /* =========================================
+        CONTACT
+      ========================================== */
+      .contact-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-top: 34px;
+      }
+
+      .contact-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 28px;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .contact-list {
+        display: grid;
+        gap: 14px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .contact-item:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .contact-item strong {
+        display: block;
+        margin-bottom: 3px;
+      }
+
+      .contact-item p,
+      .contact-item a {
+        color: var(--text-muted);
+        word-break: break-word;
+      }
+
+      .contact-note {
+        color: var(--text-muted);
+      }
+
+      /* =========================================
+        FOOTER
+      ========================================== */
+      .site-footer {
+        padding: 28px 0 36px;
+        background: #eef1f9;
+        border-top: 1px solid var(--border);
+      }
+
+      .footer-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .footer-text {
+        color: var(--text-muted);
+      }
+
+      .socials {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .social-link {
+        width: 44px;
+        height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #fff;
+        border: 1px solid var(--border);
+        color: var(--text-dark);
+        transition: var(--transition);
+      }
+
+      .social-link:hover,
+      .social-link:focus-visible {
+        background: var(--primary);
+        color: #fff;
+        border-color: var(--primary);
+      }
+
+      .social-link svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      /* =========================================
+        BACK TO TOP
+      ========================================== */
+      .back-to-top {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 0;
+        background: var(--primary);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        box-shadow: var(--shadow);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: var(--transition);
+        z-index: 900;
+      }
+
+      .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .back-to-top svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      /* =========================================
+        RESPONSIVE
+      ========================================== */
+      @media (max-width: 1024px) {
+        .grid-2,
+        .contact-wrap {
+          grid-template-columns: 1fr;
+        }
+
+        .cards {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .hero-image-wrap {
+          min-height: 420px;
+        }
+      }
+
+      @media (max-width: 860px) {
+        .nav-links,
+        .nav-cta .desktop-btn {
+          display: none;
+        }
+
+        .menu-toggle,
+        .menu-close {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .hero {
+          padding-top: 58px;
+        }
+
+        .stats {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .section {
+          padding: 72px 0;
+        }
+
+        .cards {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-card,
+        .about-card,
+        .card,
+        .timeline-item,
+        .contact-card {
+          padding: 22px;
+        }
+
+        .hero-image-wrap {
+          min-height: 340px;
+        }
+
+        .btn-group {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .btn {
+          width: 100%;
+        }
+
+        .footer-wrap {
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- =========================================
+      HEADER
+    ========================================== -->
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="#home" class="brand">Stephen<span>.</span></a>
+
+        <nav class="nav-links" aria-label="Desktop Navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">What I Do</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-cta">
+          <a class="btn btn-primary desktop-btn" href="#contact">Let’s Connect</a>
+
+          <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open mobile menu"
+            aria-expanded="false"
+            aria-controls="mobilePanel"
+            type="button"
+          >
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- =========================================
+      MOBILE MENU PANEL
+    ========================================== -->
+    <div class="mobile-panel" id="mobilePanel" aria-hidden="true">
+      <div class="mobile-overlay" id="mobileOverlay"></div>
+
+      <aside class="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+        <div class="mobile-menu-top">
+          <a href="#home" class="brand">Stephen<span>.</span></a>
+
+          <button class="menu-close" id="menuClose" aria-label="Close mobile menu" type="button">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <nav class="mobile-nav-links" aria-label="Mobile Navigation Links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">What I Do</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="mobile-actions">
+          <a class="btn btn-primary" href="#contact">Let’s Connect</a>
+          <a class="btn btn-secondary" href="https://github.com/Wasswa-Phen/Wasswa-Phen" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </aside>
+    </div>
+
+    <main>
+      <!-- =========================================
+        HERO
+      ========================================== -->
+      <section class="hero" id="home">
+        <div class="container grid-2">
+          <div class="hero-copy">
+            <!-- <span class="eyebrow">Software Engineering • Digital Production • Service</span> -->
+            <h1>
+              I’m <span>Wasswa Makubuya Stephen</span>, building clear and
+              sustainable digital experiences.
+            </h1>
+            <p>
+              I am a software engineering student and digital production specialist
+              based in Uganda, focused on structured solutions that are functional,
+              scalable, and purposeful. I work where technology, media, and service
+              intersect.
+            </p>
+
+            <!-- <div class="hero-meta">
+              <span class="hero-chip">Uganda</span>
+              <span class="hero-chip">Victoria University Kampala</span>
+              <span class="hero-chip">Church Media Support</span>
+            </div> -->
+
+            <div class="btn-group">
+              <a href="#contact" class="btn btn-primary">Reach Me</a>
+              <a href="#about" class="btn btn-secondary">Learn More</a>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="hero-image-wrap">
+              <!-- Replace with your actual image path -->
+              <img src="stephen.jpg" alt="Portrait of Wasswa Makubuya Stephen" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================
+        ABOUT
+      ========================================== -->
+      <section class="section section-light" id="about">
+        <div class="container">
+          <span class="eyebrow">About Me</span>
+          <h2 class="section-title">Purpose-driven, systems-minded, and disciplined in execution.</h2>
+          <p class="section-lead">
+            My growth path is deliberate. I design with clarity, build with discipline,
+            and document for continuity so that every project can remain useful,
+            maintainable, and scalable over time.
+          </p>
+
+          <div class="grid-2" style="margin-top: 34px;">
+            <div class="about-card">
+              <p>
+                I am currently pursuing a <strong>Professional Certificate in Software Engineering</strong>
+                at <strong>Victoria University Kampala, Institute of Advanced Technical Studies</strong>.
+              </p>
+              <p>
+                Beyond software, I bring hands-on operational value from church media environments,
+                where precision, timing, teamwork, and consistency matter in real live settings.
+              </p>
+              <p>
+                My interest is not only in making things look good, but in building systems that
+                work well, grow well, and serve people well.
+              </p>
+
+              <div class="stats">
+                <div class="stat">
+                  <h3>Tech</h3>
+                  <p>Structured web development and digital systems thinking.</p>
+                </div>
+                <div class="stat">
+                  <h3>Media</h3>
+                  <p>Live production support, audio handling, and stream coordination.</p>
+                </div>
+                <div class="stat">
+                  <h3>Service</h3>
+                  <p>Purpose-led execution with continuity and reliability in mind.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-card">
+              <h3 style="margin-bottom: 14px;">Current Focus</h3>
+              <p style="color: var(--text-muted);">
+                I am developing strong technical foundations while positioning myself to build
+                useful digital platforms, improve operational workflows, and contribute to systems
+                that support communities and ministry environments with excellence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================
+        SERVICES / WHAT I DO
+      ========================================== -->
+      <section class="section section-alt" id="services">
+        <div class="container">
+          <span class="eyebrow">What I Do</span>
+          <h2 class="section-title">Focused capabilities with real operational value.</h2>
+          <p class="section-lead">
+            My profile combines technical growth with practical media execution. The result is a
+            working blend of engineering discipline and hands-on digital support.
+          </p>
+
+          <div class="cards">
+            <article class="card">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 3V21M7 7V17M17 9V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Audio Engineering</h3>
+              <p>
+                Supporting clean and reliable sound workflows in live church environments with
+                attention to clarity, balance, and continuity.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M3 7.5C3 6.12 4.12 5 5.5 5h13C19.88 5 21 6.12 21 7.5v9c0 1.38-1.12 2.5-2.5 2.5h-13C4.12 19 3 17.88 3 16.5v-9Z" stroke="currentColor" stroke-width="2"/>
+                  <path d="M10 9.5L15 12L10 14.5V9.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>Livestream Setup & Management</h3>
+              <p>
+                Coordinating stream preparation and execution to help digital broadcasts run in
+                an organized and dependable manner.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 7h16M4 12h10M4 17h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Media Workflow Coordination</h3>
+              <p>
+                Supporting structured media operations by improving task flow, role clarity, and
+                consistent execution across production processes.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="2"/>
+                  <path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Responsive Web Design</h3>
+              <p>
+                Building clean interfaces with HTML and CSS that adapt well across screen sizes
+                while maintaining clarity and visual balance.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 4l7 4v8l-7 4-7-4V8l7-4Z" stroke="currentColor" stroke-width="2"/>
+                  <path d="M9 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>System Thinking</h3>
+              <p>
+                Looking beyond isolated tasks to structure repeatable, maintainable, and scalable
+                solutions with long-term usability in mind.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Continuous Learning</h3>
+              <p>
+                Advancing steadily in software engineering with a growth strategy centered on
+                fundamentals, practical application, and disciplined improvement.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================
+        EXPERIENCE
+      ========================================== -->
+      <section class="section section-light" id="experience">
+        <div class="container">
+          <span class="eyebrow">Experience</span>
+          <h2 class="section-title">Hands-on support shaped in real service environments.</h2>
+          <p class="section-lead">
+            My experience is grounded in practical responsibility, especially in church media
+            operations where consistency and reliability directly affect service delivery.
+          </p>
+
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-top">
+                <h3>Church Media Support Assistant Volunteer</h3>
+                <span>Volunteer Role</span>
+              </div>
+              <p>
+                Contributing to media support functions including audio handling, livestream setup,
+                and workflow coordination. This environment strengthened my operational discipline,
+                teamwork, and attention to detail under live conditions.
+              </p>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-top">
+                <h3>Professional Certificate in Software Engineering</h3>
+                <span>Current Study</span>
+              </div>
+              <p>
+                Pursuing formal software engineering training at Victoria University Kampala,
+                Institute of Advanced Technical Studies, with active growth in structured web
+                development and technical problem-solving.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================
+        CONTACT
+      ========================================== -->
+      <section class="section section-alt" id="contact">
+        <div class="container">
+          <span class="eyebrow">Reach Me</span>
+          <h2 class="section-title">Let’s connect and build something meaningful.</h2>
+          <p class="section-lead">
+            Whether it is collaboration, opportunity, or a professional conversation, I am open
+            to connecting with people who value clarity, structure, and purpose in digital work.
+          </p>
+
+          <div class="contact-wrap">
+            <div class="contact-card">
+              <div class="contact-list">
+                <div class="contact-item">
+                  <div>
+                    <strong>Email</strong>
+                    <a href="mailto:wasswastephen24@gmail.com">wasswastephen24@gmail.com</a>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div>
+                    <strong>WhatsApp</strong>
+                    <a href="https://wa.me/256701951404" target="_blank" rel="noopener">+256 701 951 404</a>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div>
+                    <strong>LinkedIn</strong>
+                    <a href="https://linkedin.com/in/stephen-wasswa" target="_blank" rel="noopener">
+                      linkedin.com/in/stephen-wasswa
+                    </a>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div>
+                    <strong>GitHub</strong>
+                    <a href="https://github.com/Wasswa-Phen/Wasswa-Phen" target="_blank" rel="noopener">
+                      github.com/Wasswa-Phen/Wasswa-Phen
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <h3 style="margin-bottom: 12px;">Professional Direction</h3>
+              <p class="contact-note">
+                I am building toward a profile that combines software engineering, digital production,
+                and structured service delivery. My objective is to contribute to systems that are
+                useful, sustainable, and impactful.
+              </p>
+
+              <div class="btn-group" style="margin-top: 22px;">
+                <a class="btn btn-primary" href="mailto:wasswastephen24@gmail.com">Send Email</a>
+                <a class="btn btn-secondary" href="https://github.com/Wasswa-Phen/Wasswa-Phen" target="_blank" rel="noopener">View GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =========================================
+      FOOTER
+    ========================================== -->
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p class="footer-text">
+          © <span id="year"></span> Wasswa Makubuya Stephen. All rights reserved.
+        </p>
+
+        <div class="socials" aria-label="Social Links">
+          <a
+            class="social-link"
+            href="mailto:wasswastephen24@gmail.com"
+            aria-label="Email"
+          >
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2"/>
+              <path d="M4 8l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <a
+            class="social-link"
+            href="https://wa.me/256701951404"
+            target="_blank"
+            rel="noopener"
+            aria-label="WhatsApp"
+          >
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 21a8.9 8.9 0 0 1-4.4-1.1L3 21l1.2-4.5A9 9 0 1 1 12 21Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M9.5 9.5c.2-.5.5-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.3.1.5-.1.7l-.5.6c-.1.1-.1.3 0 .4.3.5.7.9 1.2 1.2.1.1.3.1.4 0l.6-.5c.2-.2.4-.2.7-.1l1.6.7c.3.1.4.3.4.5v.5c0 .3 0 .6-.5.8-.5.2-1.2.3-2.3-.1-1.1-.4-2.1-1.2-3-2.1-.9-.9-1.7-1.9-2.1-3-.4-1.1-.3-1.8-.1-2.3Z" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </a>
+
+          <a
+            class="social-link"
+            href="https://linkedin.com/in/stephen-wasswa"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+          >
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7 9v8M7 7.2v.1M11 17v-4.4c0-1.7.9-2.6 2.2-2.6 1.3 0 1.8.8 1.8 2.6V17M4 5h16v14H4z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </a>
+
+          <a
+            class="social-link"
+            href="https://github.com/Wasswa-Phen/Wasswa-Phen"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+          >
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M9 19c-4 1.2-4-2-6-2m12 4v-3.1a2.7 2.7 0 0 0-.8-2.1c2.6-.3 5.3-1.3 5.3-5.8a4.6 4.6 0 0 0-1.2-3.2 4.2 4.2 0 0 0-.1-3.1s-1-.3-3.3 1.2a11.5 11.5 0 0 0-6 0C6.6 3.4 5.6 3.7 5.6 3.7a4.2 4.2 0 0 0-.1 3.1A4.6 4.6 0 0 0 4.3 10c0 4.5 2.7 5.5 5.3 5.8a2.7 2.7 0 0 0-.8 2.1V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =========================================
+      BACK TO TOP BUTTON
+    ========================================== -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top" type="button">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+    <script>
+      /* =========================================
+        MOBILE MENU LOGIC
+      ========================================== */
+      const body = document.body;
+      const menuToggle = document.getElementById("menuToggle");
+      const menuClose = document.getElementById("menuClose");
+      const mobilePanel = document.getElementById("mobilePanel");
+      const mobileOverlay = document.getElementById("mobileOverlay");
+      const mobileLinks = document.querySelectorAll(".mobile-nav-links a, .mobile-actions a");
+
+      function openMenu() {
+        mobilePanel.classList.add("active");
+        body.classList.add("menu-open");
+        menuToggle.setAttribute("aria-expanded", "true");
+        mobilePanel.setAttribute("aria-hidden", "false");
+      }
+
+      function closeMenu() {
+        mobilePanel.classList.remove("active");
+        body.classList.remove("menu-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        mobilePanel.setAttribute("aria-hidden", "true");
+      }
+
+      menuToggle.addEventListener("click", openMenu);
+      menuClose.addEventListener("click", closeMenu);
+      mobileOverlay.addEventListener("click", closeMenu);
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && mobilePanel.classList.contains("active")) {
+          closeMenu();
+        }
+      });
+
+      /* =========================================
+        BACK TO TOP BUTTON
+      ========================================== */
+      const backToTop = document.getElementById("backToTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 450) {
+          backToTop.classList.add("show");
+        } else {
+          backToTop.classList.remove("show");
+        }
+      });
+
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+
+      /* =========================================
+        AUTO YEAR
+      ========================================== */
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
