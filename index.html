@@ -2,11 +2,13 @@
 <html lang="en">
   <head>
     <!-- =========================================
-      BASIC SEO + DOCUMENT SETUP
-    ========================================== -->
+  BASIC SEO + DOCUMENT SETUP
+========================================== -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Wasswa Makubuya Stephen | Portfolio</title>
+
     <meta
       name="description"
       content="Portfolio of Wasswa Makubuya Stephen (Pheny), a software engineering student and digital production specialist based in Uganda."
@@ -18,7 +20,17 @@
     <meta name="author" content="Wasswa Makubuya Stephen" />
     <meta name="theme-color" content="#5a67d8" />
 
-    <!-- Open Graph -->
+    <!-- =========================================
+  FAVICON 
+========================================== -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
+    <!-- =========================================
+  OPEN GRAPH
+========================================== -->
     <meta property="og:title" content="Wasswa Makubuya Stephen | Portfolio" />
     <meta
       property="og:description"
@@ -282,7 +294,9 @@
         visibility: hidden;
         opacity: 0;
         pointer-events: none;
-        transition: opacity var(--transition), visibility var(--transition);
+        transition:
+          opacity var(--transition),
+          visibility var(--transition);
       }
 
       .mobile-panel.active {
@@ -471,7 +485,9 @@
         border-radius: var(--radius-lg);
         padding: 26px;
         box-shadow: var(--shadow-soft);
-        transition: transform var(--transition), box-shadow var(--transition);
+        transition:
+          transform var(--transition),
+          box-shadow var(--transition);
       }
 
       .card:hover {
@@ -769,7 +785,9 @@
         </nav>
 
         <div class="nav-cta">
-          <a class="btn btn-primary desktop-btn" href="#contact">Let’s Connect</a>
+          <a class="btn btn-primary desktop-btn" href="#contact"
+            >Let’s Connect</a
+          >
 
           <button
             class="menu-toggle"
@@ -780,7 +798,12 @@
             type="button"
           >
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path
+                d="M4 7H20M4 12H20M4 17H20"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
             </svg>
           </button>
         </div>
@@ -793,13 +816,28 @@
     <div class="mobile-panel" id="mobilePanel" aria-hidden="true">
       <div class="mobile-overlay" id="mobileOverlay"></div>
 
-      <aside class="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+      <aside
+        class="mobile-menu"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile Navigation"
+      >
         <div class="mobile-menu-top">
           <a href="#home" class="brand">Stephen<span>.</span></a>
 
-          <button class="menu-close" id="menuClose" aria-label="Close mobile menu" type="button">
+          <button
+            class="menu-close"
+            id="menuClose"
+            aria-label="Close mobile menu"
+            type="button"
+          >
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path
+                d="M6 6L18 18M18 6L6 18"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
             </svg>
           </button>
         </div>
@@ -814,7 +852,13 @@
 
         <div class="mobile-actions">
           <a class="btn btn-primary" href="#contact">Let’s Connect</a>
-          <a class="btn btn-secondary" href="https://github.com/Wasswa-Phen/Wasswa-Phen" target="_blank" rel="noopener">GitHub</a>
+          <a
+            class="btn btn-secondary"
+            href="https://github.com/Wasswa-Phen/Wasswa-Phen"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >
         </div>
       </aside>
     </div>
@@ -832,10 +876,10 @@
               sustainable digital experiences.
             </h1>
             <p>
-              I am a software engineering student and digital production specialist
-              based in Uganda, focused on structured solutions that are functional,
-              scalable, and purposeful. I work where technology, media, and service
-              intersect.
+              I am a software engineering student and digital production
+              specialist based in Uganda, focused on structured solutions that
+              are functional, scalable, and purposeful. I work where technology,
+              media, and service intersect.
             </p>
 
             <!-- <div class="hero-meta">
@@ -853,7 +897,10 @@
           <div class="hero-card">
             <div class="hero-image-wrap">
               <!-- Replace with your actual image path -->
-              <img src="stephen.jpg" alt="Portrait of Wasswa Makubuya Stephen" />
+              <img
+                src="stephen.jpg"
+                alt="Portrait of Wasswa Makubuya Stephen"
+              />
             </div>
           </div>
         </div>
@@ -865,50 +912,70 @@
       <section class="section section-light" id="about">
         <div class="container">
           <span class="eyebrow">About Me</span>
-          <h2 class="section-title">Purpose-driven, systems-minded, and disciplined in execution.</h2>
+          <h2 class="section-title">
+            Purpose-driven, systems-minded, and disciplined in execution.
+          </h2>
           <p class="section-lead">
-            My growth path is deliberate. I design with clarity, build with discipline,
-            and document for continuity so that every project can remain useful,
-            maintainable, and scalable over time.
+            My growth path is deliberate. I design with clarity, build with
+            discipline, and document for continuity so that every project can
+            remain useful, maintainable, and scalable over time.
           </p>
 
-          <div class="grid-2" style="margin-top: 34px;">
+          <div class="grid-2" style="margin-top: 34px">
             <div class="about-card">
               <p>
-                I am currently pursuing a <strong>Professional Certificate in Software Engineering</strong>
-                at <strong>Victoria University Kampala, Institute of Advanced Technical Studies</strong>.
+                I am currently pursuing a
+                <strong
+                  >Professional Certificate in Software Engineering</strong
+                >
+                at
+                <strong
+                  >Victoria University Kampala, Institute of Advanced Technical
+                  Studies</strong
+                >.
               </p>
               <p>
-                Beyond software, I bring hands-on operational value from church media environments,
-                where precision, timing, teamwork, and consistency matter in real live settings.
+                Beyond software, I bring hands-on operational value from church
+                media environments, where precision, timing, teamwork, and
+                consistency matter in real live settings.
               </p>
               <p>
-                My interest is not only in making things look good, but in building systems that
-                work well, grow well, and serve people well.
+                My interest is not only in making things look good, but in
+                building systems that work well, grow well, and serve people
+                well.
               </p>
 
               <div class="stats">
                 <div class="stat">
                   <h3>Tech</h3>
-                  <p>Structured web development and digital systems thinking.</p>
+                  <p>
+                    Structured web development and digital systems thinking.
+                  </p>
                 </div>
                 <div class="stat">
                   <h3>Media</h3>
-                  <p>Live production support, audio handling, and stream coordination.</p>
+                  <p>
+                    Live production support, audio handling, and stream
+                    coordination.
+                  </p>
                 </div>
                 <div class="stat">
                   <h3>Service</h3>
-                  <p>Purpose-led execution with continuity and reliability in mind.</p>
+                  <p>
+                    Purpose-led execution with continuity and reliability in
+                    mind.
+                  </p>
                 </div>
               </div>
             </div>
 
             <div class="about-card">
-              <h3 style="margin-bottom: 14px;">Current Focus</h3>
-              <p style="color: var(--text-muted);">
-                I am developing strong technical foundations while positioning myself to build
-                useful digital platforms, improve operational workflows, and contribute to systems
-                that support communities and ministry environments with excellence.
+              <h3 style="margin-bottom: 14px">Current Focus</h3>
+              <p style="color: var(--text-muted)">
+                I am developing strong technical foundations while positioning
+                myself to build useful digital platforms, improve operational
+                workflows, and contribute to systems that support communities
+                and ministry environments with excellence.
               </p>
             </div>
           </div>
@@ -921,91 +988,140 @@
       <section class="section section-alt" id="services">
         <div class="container">
           <span class="eyebrow">What I Do</span>
-          <h2 class="section-title">Focused capabilities with real operational value.</h2>
+          <h2 class="section-title">
+            Focused capabilities with real operational value.
+          </h2>
           <p class="section-lead">
-            My profile combines technical growth with practical media execution. The result is a
-            working blend of engineering discipline and hands-on digital support.
+            My profile combines technical growth with practical media execution.
+            The result is a working blend of engineering discipline and hands-on
+            digital support.
           </p>
 
           <div class="cards">
             <article class="card">
               <div class="card-icon">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 3V21M7 7V17M17 9V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path
+                    d="M12 3V21M7 7V17M17 9V15"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
                 </svg>
               </div>
               <h3>Audio Engineering</h3>
               <p>
-                Supporting clean and reliable sound workflows in live church environments with
-                attention to clarity, balance, and continuity.
+                Supporting clean and reliable sound workflows in live church
+                environments with attention to clarity, balance, and continuity.
               </p>
             </article>
 
             <article class="card">
               <div class="card-icon">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M3 7.5C3 6.12 4.12 5 5.5 5h13C19.88 5 21 6.12 21 7.5v9c0 1.38-1.12 2.5-2.5 2.5h-13C4.12 19 3 17.88 3 16.5v-9Z" stroke="currentColor" stroke-width="2"/>
-                  <path d="M10 9.5L15 12L10 14.5V9.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                  <path
+                    d="M3 7.5C3 6.12 4.12 5 5.5 5h13C19.88 5 21 6.12 21 7.5v9c0 1.38-1.12 2.5-2.5 2.5h-13C4.12 19 3 17.88 3 16.5v-9Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M10 9.5L15 12L10 14.5V9.5Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               </div>
               <h3>Livestream Setup & Management</h3>
               <p>
-                Coordinating stream preparation and execution to help digital broadcasts run in
-                an organized and dependable manner.
+                Coordinating stream preparation and execution to help digital
+                broadcasts run in an organized and dependable manner.
               </p>
             </article>
 
             <article class="card">
               <div class="card-icon">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M4 7h16M4 12h10M4 17h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path
+                    d="M4 7h16M4 12h10M4 17h7"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
                 </svg>
               </div>
               <h3>Media Workflow Coordination</h3>
               <p>
-                Supporting structured media operations by improving task flow, role clarity, and
-                consistent execution across production processes.
+                Supporting structured media operations by improving task flow,
+                role clarity, and consistent execution across production
+                processes.
               </p>
             </article>
 
             <article class="card">
               <div class="card-icon">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="2"/>
-                  <path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path
+                    d="M4 5h16v14H4z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M8 9h8M8 13h5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
                 </svg>
               </div>
               <h3>Responsive Web Design</h3>
               <p>
-                Building clean interfaces with HTML and CSS that adapt well across screen sizes
-                while maintaining clarity and visual balance.
+                Building clean interfaces with HTML and CSS that adapt well
+                across screen sizes while maintaining clarity and visual
+                balance.
               </p>
             </article>
 
             <article class="card">
               <div class="card-icon">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 4l7 4v8l-7 4-7-4V8l7-4Z" stroke="currentColor" stroke-width="2"/>
-                  <path d="M9 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path
+                    d="M12 4l7 4v8l-7 4-7-4V8l7-4Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M9 12h6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
                 </svg>
               </div>
               <h3>System Thinking</h3>
               <p>
-                Looking beyond isolated tasks to structure repeatable, maintainable, and scalable
-                solutions with long-term usability in mind.
+                Looking beyond isolated tasks to structure repeatable,
+                maintainable, and scalable solutions with long-term usability in
+                mind.
               </p>
             </article>
 
             <article class="card">
               <div class="card-icon">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path
+                    d="M12 6v12M6 12h12"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
                 </svg>
               </div>
               <h3>Continuous Learning</h3>
               <p>
-                Advancing steadily in software engineering with a growth strategy centered on
-                fundamentals, practical application, and disciplined improvement.
+                Advancing steadily in software engineering with a growth
+                strategy centered on fundamentals, practical application, and
+                disciplined improvement.
               </p>
             </article>
           </div>
@@ -1018,10 +1134,13 @@
       <section class="section section-light" id="experience">
         <div class="container">
           <span class="eyebrow">Experience</span>
-          <h2 class="section-title">Hands-on support shaped in real service environments.</h2>
+          <h2 class="section-title">
+            Hands-on support shaped in real service environments.
+          </h2>
           <p class="section-lead">
-            My experience is grounded in practical responsibility, especially in church media
-            operations where consistency and reliability directly affect service delivery.
+            My experience is grounded in practical responsibility, especially in
+            church media operations where consistency and reliability directly
+            affect service delivery.
           </p>
 
           <div class="timeline">
@@ -1031,9 +1150,10 @@
                 <span>Volunteer Role</span>
               </div>
               <p>
-                Contributing to media support functions including audio handling, livestream setup,
-                and workflow coordination. This environment strengthened my operational discipline,
-                teamwork, and attention to detail under live conditions.
+                Contributing to media support functions including audio
+                handling, livestream setup, and workflow coordination. This
+                environment strengthened my operational discipline, teamwork,
+                and attention to detail under live conditions.
               </p>
             </article>
 
@@ -1043,9 +1163,10 @@
                 <span>Current Study</span>
               </div>
               <p>
-                Pursuing formal software engineering training at Victoria University Kampala,
-                Institute of Advanced Technical Studies, with active growth in structured web
-                development and technical problem-solving.
+                Pursuing formal software engineering training at Victoria
+                University Kampala, Institute of Advanced Technical Studies,
+                with active growth in structured web development and technical
+                problem-solving.
               </p>
             </article>
           </div>
@@ -1058,10 +1179,13 @@
       <section class="section section-alt" id="contact">
         <div class="container">
           <span class="eyebrow">Reach Me</span>
-          <h2 class="section-title">Let’s connect and build something meaningful.</h2>
+          <h2 class="section-title">
+            Let’s connect and build something meaningful.
+          </h2>
           <p class="section-lead">
-            Whether it is collaboration, opportunity, or a professional conversation, I am open
-            to connecting with people who value clarity, structure, and purpose in digital work.
+            Whether it is collaboration, opportunity, or a professional
+            conversation, I am open to connecting with people who value clarity,
+            structure, and purpose in digital work.
           </p>
 
           <div class="contact-wrap">
@@ -1070,21 +1194,32 @@
                 <div class="contact-item">
                   <div>
                     <strong>Email</strong>
-                    <a href="mailto:wasswastephen24@gmail.com">wasswastephen24@gmail.com</a>
+                    <a href="mailto:wasswastephen24@gmail.com"
+                      >wasswastephen24@gmail.com</a
+                    >
                   </div>
                 </div>
 
                 <div class="contact-item">
                   <div>
                     <strong>WhatsApp</strong>
-                    <a href="https://wa.me/256701951404" target="_blank" rel="noopener">+256 701 951 404</a>
+                    <a
+                      href="https://wa.me/256701951404"
+                      target="_blank"
+                      rel="noopener"
+                      >+256 701 951 404</a
+                    >
                   </div>
                 </div>
 
                 <div class="contact-item">
                   <div>
                     <strong>LinkedIn</strong>
-                    <a href="https://linkedin.com/in/stephen-wasswa" target="_blank" rel="noopener">
+                    <a
+                      href="https://linkedin.com/in/stephen-wasswa"
+                      target="_blank"
+                      rel="noopener"
+                    >
                       linkedin.com/in/stephen-wasswa
                     </a>
                   </div>
@@ -1093,7 +1228,11 @@
                 <div class="contact-item">
                   <div>
                     <strong>GitHub</strong>
-                    <a href="https://github.com/Wasswa-Phen/Wasswa-Phen" target="_blank" rel="noopener">
+                    <a
+                      href="https://github.com/Wasswa-Phen/Wasswa-Phen"
+                      target="_blank"
+                      rel="noopener"
+                    >
                       github.com/Wasswa-Phen/Wasswa-Phen
                     </a>
                   </div>
@@ -1102,16 +1241,27 @@
             </div>
 
             <div class="contact-card">
-              <h3 style="margin-bottom: 12px;">Professional Direction</h3>
+              <h3 style="margin-bottom: 12px">Professional Direction</h3>
               <p class="contact-note">
-                I am building toward a profile that combines software engineering, digital production,
-                and structured service delivery. My objective is to contribute to systems that are
+                I am building toward a profile that combines software
+                engineering, digital production, and structured service
+                delivery. My objective is to contribute to systems that are
                 useful, sustainable, and impactful.
               </p>
 
-              <div class="btn-group" style="margin-top: 22px;">
-                <a class="btn btn-primary" href="mailto:wasswastephen24@gmail.com">Send Email</a>
-                <a class="btn btn-secondary" href="https://github.com/Wasswa-Phen/Wasswa-Phen" target="_blank" rel="noopener">View GitHub</a>
+              <div class="btn-group" style="margin-top: 22px">
+                <a
+                  class="btn btn-primary"
+                  href="mailto:wasswastephen24@gmail.com"
+                  >Send Email</a
+                >
+                <a
+                  class="btn btn-secondary"
+                  href="https://github.com/Wasswa-Phen/Wasswa-Phen"
+                  target="_blank"
+                  rel="noopener"
+                  >View GitHub</a
+                >
               </div>
             </div>
           </div>
@@ -1125,7 +1275,8 @@
     <footer class="site-footer">
       <div class="container footer-wrap">
         <p class="footer-text">
-          © <span id="year"></span> Wasswa Makubuya Stephen. All rights reserved.
+          © <span id="year"></span> Wasswa Makubuya Stephen. All rights
+          reserved.
         </p>
 
         <div class="socials" aria-label="Social Links">
@@ -1135,8 +1286,13 @@
             aria-label="Email"
           >
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2"/>
-              <path d="M4 8l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2" />
+              <path
+                d="M4 8l8 6 8-6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linejoin="round"
+              />
             </svg>
           </a>
 
@@ -1148,8 +1304,17 @@
             aria-label="WhatsApp"
           >
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 21a8.9 8.9 0 0 1-4.4-1.1L3 21l1.2-4.5A9 9 0 1 1 12 21Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <path d="M9.5 9.5c.2-.5.5-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.3.1.5-.1.7l-.5.6c-.1.1-.1.3 0 .4.3.5.7.9 1.2 1.2.1.1.3.1.4 0l.6-.5c.2-.2.4-.2.7-.1l1.6.7c.3.1.4.3.4.5v.5c0 .3 0 .6-.5.8-.5.2-1.2.3-2.3-.1-1.1-.4-2.1-1.2-3-2.1-.9-.9-1.7-1.9-2.1-3-.4-1.1-.3-1.8-.1-2.3Z" stroke="currentColor" stroke-width="1.5"/>
+              <path
+                d="M12 21a8.9 8.9 0 0 1-4.4-1.1L3 21l1.2-4.5A9 9 0 1 1 12 21Z"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M9.5 9.5c.2-.5.5-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.3.1.5-.1.7l-.5.6c-.1.1-.1.3 0 .4.3.5.7.9 1.2 1.2.1.1.3.1.4 0l.6-.5c.2-.2.4-.2.7-.1l1.6.7c.3.1.4.3.4.5v.5c0 .3 0 .6-.5.8-.5.2-1.2.3-2.3-.1-1.1-.4-2.1-1.2-3-2.1-.9-.9-1.7-1.9-2.1-3-.4-1.1-.3-1.8-.1-2.3Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
             </svg>
           </a>
 
@@ -1161,7 +1326,12 @@
             aria-label="LinkedIn"
           >
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M7 9v8M7 7.2v.1M11 17v-4.4c0-1.7.9-2.6 2.2-2.6 1.3 0 1.8.8 1.8 2.6V17M4 5h16v14H4z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path
+                d="M7 9v8M7 7.2v.1M11 17v-4.4c0-1.7.9-2.6 2.2-2.6 1.3 0 1.8.8 1.8 2.6V17M4 5h16v14H4z"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
             </svg>
           </a>
 
@@ -1173,7 +1343,13 @@
             aria-label="GitHub"
           >
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M9 19c-4 1.2-4-2-6-2m12 4v-3.1a2.7 2.7 0 0 0-.8-2.1c2.6-.3 5.3-1.3 5.3-5.8a4.6 4.6 0 0 0-1.2-3.2 4.2 4.2 0 0 0-.1-3.1s-1-.3-3.3 1.2a11.5 11.5 0 0 0-6 0C6.6 3.4 5.6 3.7 5.6 3.7a4.2 4.2 0 0 0-.1 3.1A4.6 4.6 0 0 0 4.3 10c0 4.5 2.7 5.5 5.3 5.8a2.7 2.7 0 0 0-.8 2.1V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path
+                d="M9 19c-4 1.2-4-2-6-2m12 4v-3.1a2.7 2.7 0 0 0-.8-2.1c2.6-.3 5.3-1.3 5.3-5.8a4.6 4.6 0 0 0-1.2-3.2 4.2 4.2 0 0 0-.1-3.1s-1-.3-3.3 1.2a11.5 11.5 0 0 0-6 0C6.6 3.4 5.6 3.7 5.6 3.7a4.2 4.2 0 0 0-.1 3.1A4.6 4.6 0 0 0 4.3 10c0 4.5 2.7 5.5 5.3 5.8a2.7 2.7 0 0 0-.8 2.1V21"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
             </svg>
           </a>
         </div>
@@ -1183,9 +1359,20 @@
     <!-- =========================================
       BACK TO TOP BUTTON
     ========================================== -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top" type="button">
+    <button
+      class="back-to-top"
+      id="backToTop"
+      aria-label="Back to top"
+      type="button"
+    >
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path
+          d="M12 19V5M5 12l7-7 7 7"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
       </svg>
     </button>
 
@@ -1198,7 +1385,9 @@
       const menuClose = document.getElementById("menuClose");
       const mobilePanel = document.getElementById("mobilePanel");
       const mobileOverlay = document.getElementById("mobileOverlay");
-      const mobileLinks = document.querySelectorAll(".mobile-nav-links a, .mobile-actions a");
+      const mobileLinks = document.querySelectorAll(
+        ".mobile-nav-links a, .mobile-actions a",
+      );
 
       function openMenu() {
         mobilePanel.classList.add("active");
@@ -1223,7 +1412,10 @@
       });
 
       document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && mobilePanel.classList.contains("active")) {
+        if (
+          event.key === "Escape" &&
+          mobilePanel.classList.contains("active")
+        ) {
           closeMenu();
         }
       });
@@ -1244,7 +1436,7 @@
       backToTop.addEventListener("click", () => {
         window.scrollTo({
           top: 0,
-          behavior: "smooth"
+          behavior: "smooth",
         });
       });
 
