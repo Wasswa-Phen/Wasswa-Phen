@@ -91,11 +91,34 @@
         }
 
         .menu-panel {
-            display: none;
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            z-index: 100;
+            background: #ffffff;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
+            transform: scale(0.98) translateY(-6px);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
         }
 
         .menu-panel.is-open {
-            display: block;
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: scale(1) translateY(0);
+        }
+
+        @media (min-width: 1024px) {
+            .menu-panel {
+                display: none !important;
+            }
         }
 
         .hero-orbit {
@@ -295,34 +318,117 @@
                     aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu"> <i
                         data-lucide="menu" aria-hidden="true"></i> </button>
             </nav>
-            <div id="mobile-menu" class="menu-panel border-t border-blue-100 bg-white px-5 pb-5 lg:hidden">
-                <div class="flex flex-col gap-1 pt-3"><a data-template-id="mobile-nav-home"
-                        class="canva-link rounded-lg px-3 py-3 text-sm font-semibold text-[#07142f] hover:bg-blue-50"
+        </header>
+        <div id="mobile-menu" class="menu-panel lg:hidden" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+            <div class="flex items-center justify-between border-b border-blue-100/80 px-5 py-4 bg-white shrink-0">
+                <a href="#home" class="flex items-center gap-3 rounded-sm" aria-label="PHENY home">
+                    <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-[#1649d8] font-bold text-white shadow-sm">P</span>
+                    <span data-template-id="nav-brand-mobile"
+                        class="canva-text display-font text-base font-extrabold tracking-[0.16em] text-[#07142f]"
+                        style="color: rgb(7, 20, 47); font-weight: 800; font-style: normal; font-size: 16px;">PHENY</span>
+                </a>
+                <button id="menu-close" type="button"
+                    class="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-100 text-[#07142f] hover:bg-blue-50 hover:border-blue-200 active:scale-95 transition"
+                    aria-label="Close navigation menu">
+                    <i data-lucide="x" class="h-5 w-5" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="flex-1 overflow-y-auto overscroll-contain px-5 py-5 flex flex-col justify-between">
+                <nav class="flex flex-col gap-1.5" aria-label="Mobile navigation links">
+                    <a data-template-id="mobile-nav-home"
+                        class="canva-link group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] transition hover:bg-blue-50/80 active:bg-blue-100/60"
                         href="#home"
-                        style="color: rgb(7, 20, 47); font-weight: 600; font-style: normal; font-size: 16px;">Home</a>
+                        style="color: rgb(7, 20, 47); font-weight: 600; font-style: normal; font-size: 18px;">
+                        <span class="flex items-center gap-3.5">
+                            <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-[#1649d8] group-hover:bg-[#1649d8] group-hover:text-white transition">01</span>
+                            <span class="display-font text-xl font-bold tracking-tight">Home</span>
+                        </span>
+                        <i data-lucide="chevron-right" class="h-5 w-5 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-[#1649d8]"></i>
+                    </a>
                     <a data-template-id="mobile-nav-about"
-                        class="canva-link rounded-lg px-3 py-3 text-sm font-semibold text-[#07142f] hover:bg-blue-50"
+                        class="canva-link group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] transition hover:bg-blue-50/80 active:bg-blue-100/60"
                         href="#about"
-                        style="color: rgb(7, 20, 47); font-weight: 600; font-style: normal; font-size: 16px;">About</a>
+                        style="color: rgb(7, 20, 47); font-weight: 600; font-style: normal; font-size: 18px;">
+                        <span class="flex items-center gap-3.5">
+                            <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-[#1649d8] group-hover:bg-[#1649d8] group-hover:text-white transition">02</span>
+                            <span class="display-font text-xl font-bold tracking-tight">About</span>
+                        </span>
+                        <i data-lucide="chevron-right" class="h-5 w-5 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-[#1649d8]"></i>
+                    </a>
                     <a data-template-id="mobile-nav-services"
-                        class="canva-link rounded-lg px-3 py-3 text-sm font-semibold text-[#07142f] hover:bg-blue-50"
+                        class="canva-link group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] transition hover:bg-blue-50/80 active:bg-blue-100/60"
                         href="#services"
-                        style="color: rgb(7, 20, 47); font-weight: 600; font-style: normal; font-size: 16px;">Services</a>
+                        style="color: rgb(7, 20, 47); font-weight: 600; font-style: normal; font-size: 18px;">
+                        <span class="flex items-center gap-3.5">
+                            <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-[#1649d8] group-hover:bg-[#1649d8] group-hover:text-white transition">03</span>
+                            <span class="display-font text-xl font-bold tracking-tight">Services</span>
+                        </span>
+                        <i data-lucide="chevron-right" class="h-5 w-5 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-[#1649d8]"></i>
+                    </a>
                     <a data-template-id="mobile-nav-work"
-                        class="canva-link rounded-lg px-3 py-3 text-sm font-semibold text-[#07142f] hover:bg-blue-50"
+                        class="canva-link group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] transition hover:bg-blue-50/80 active:bg-blue-100/60"
                         href="#work"
-                        style="color: rgb(7, 20, 47); font-weight: 600; font-style: normal; font-size: 16px;">Work</a>
+                        style="color: rgb(7, 20, 47); font-weight: 600; font-style: normal; font-size: 18px;">
+                        <span class="flex items-center gap-3.5">
+                            <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-[#1649d8] group-hover:bg-[#1649d8] group-hover:text-white transition">04</span>
+                            <span class="display-font text-xl font-bold tracking-tight">Work</span>
+                        </span>
+                        <i data-lucide="chevron-right" class="h-5 w-5 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-[#1649d8]"></i>
+                    </a>
                     <a data-template-id="mobile-nav-philosophy"
-                        class="canva-link rounded-lg px-3 py-3 text-sm font-semibold text-[#07142f] hover:bg-blue-50"
+                        class="canva-link group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] transition hover:bg-blue-50/80 active:bg-blue-100/60"
                         href="#philosophy"
-                        style="color: rgb(7, 20, 47); font-weight: 600; font-style: normal; font-size: 16px;">Philosophy</a>
+                        style="color: rgb(7, 20, 47); font-weight: 600; font-style: normal; font-size: 18px;">
+                        <span class="flex items-center gap-3.5">
+                            <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-[#1649d8] group-hover:bg-[#1649d8] group-hover:text-white transition">05</span>
+                            <span class="display-font text-xl font-bold tracking-tight">Philosophy</span>
+                        </span>
+                        <i data-lucide="chevron-right" class="h-5 w-5 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-[#1649d8]"></i>
+                    </a>
                     <a data-template-id="mobile-nav-contact"
-                        class="canva-link rounded-lg px-3 py-3 text-sm font-semibold text-[#07142f] hover:bg-blue-50"
+                        class="canva-link group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] transition hover:bg-blue-50/80 active:bg-blue-100/60"
                         href="#contact"
-                        style="color: rgb(7, 20, 47); font-weight: 600; font-style: normal; font-size: 16px;">Contact</a>
+                        style="color: rgb(7, 20, 47); font-weight: 600; font-style: normal; font-size: 18px;">
+                        <span class="flex items-center gap-3.5">
+                            <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-[#1649d8] group-hover:bg-[#1649d8] group-hover:text-white transition">06</span>
+                            <span class="display-font text-xl font-bold tracking-tight">Contact</span>
+                        </span>
+                        <i data-lucide="chevron-right" class="h-5 w-5 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-[#1649d8]"></i>
+                    </a>
+                </nav>
+
+                <div class="mt-6 pt-5 border-t border-blue-100/80 flex flex-col gap-3.5">
+                    <a data-template-id="mobile-nav-cta"
+                        class="canva-button flex items-center justify-center gap-2 rounded-2xl bg-[#1649d8] px-5 py-4 text-base font-bold text-white shadow-md shadow-blue-600/20 transition hover:bg-[#0d36ae] active:scale-[0.98]"
+                        href="#contact"
+                        style="background: rgb(22, 73, 216); color: rgb(255, 255, 255); font-weight: 700;">
+                        <span>Start a Project</span>
+                        <i data-lucide="arrow-right" class="h-4 w-4" aria-hidden="true"></i>
+                    </a>
+
+                    <div class="flex items-center justify-between gap-3 pt-1">
+                        <a href="https://wa.me/256701951404" target="_blank" rel="noopener noreferrer"
+                            class="flex-1 flex items-center justify-center gap-2 rounded-xl border border-blue-100 bg-blue-50/60 py-3 px-3 text-xs font-semibold text-[#07142f] hover:bg-blue-50 hover:border-blue-200 transition">
+                            <i data-lucide="phone" class="h-3.5 w-3.5 text-[#1649d8]" aria-hidden="true"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                        <a href="mailto:wasswastephen24@gmail.com"
+                            class="flex-1 flex items-center justify-center gap-2 rounded-xl border border-blue-100 bg-blue-50/60 py-3 px-3 text-xs font-semibold text-[#07142f] hover:bg-blue-50 hover:border-blue-200 transition">
+                            <i data-lucide="mail" class="h-3.5 w-3.5 text-[#1649d8]" aria-hidden="true"></i>
+                            <span>Email</span>
+                        </a>
+                    </div>
+
+                    <div class="flex items-center justify-center gap-4 pt-1 text-xs font-medium text-slate-500">
+                        <a href="https://linkedin.com/in/stephen-wasswa" target="_blank" rel="noopener noreferrer" class="hover:text-[#1649d8] transition">LinkedIn</a>
+                        <span class="text-slate-300">•</span>
+                        <a href="https://github.com/Wasswa-Phen" target="_blank" rel="noopener noreferrer" class="hover:text-[#1649d8] transition">GitHub</a>
+                        <span class="text-slate-300">•</span>
+                        <a href="https://instagram.com/wasswa_phen" target="_blank" rel="noopener noreferrer" class="hover:text-[#1649d8] transition">Instagram</a>
+                    </div>
                 </div>
             </div>
-        </header>
+        </div>
         <main>
             <section id="home" class="grid-texture relative overflow-hidden bg-[#07142f]">
                 <div class="hero-orbit" aria-hidden="true"></div>
@@ -336,7 +442,7 @@
                         <h1 data-template-id="hero-name"
                             class="canva-text display-font reveal delay-1 max-w-3xl text-5xl font-extrabold leading-[.95] tracking-[-.065em] text-white sm:text-7xl lg:text-8xl"
                             style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 32px;">
-                            WASSWA MAKUBUYA STEPHEN</h1>
+                            WASSWA STEPHEN</h1>
                         <p data-template-id="hero-role"
                             class="canva-text reveal delay-2 mt-7 text-sm font-bold tracking-[0.12em] text-[#aebfea] sm:text-base"
                             style="color: rgb(174, 191, 234); font-weight: 700; font-style: normal; font-size: 16px;">
@@ -794,19 +900,51 @@
 
             const menuToggle = document.getElementById("menu-toggle");
             const mobileMenu = document.getElementById("mobile-menu");
+            const menuClose = document.getElementById("menu-close");
+
+            function openMobileMenu() {
+                mobileMenu.classList.add("is-open");
+                menuToggle.setAttribute("aria-expanded", "true");
+                menuToggle.setAttribute("aria-label", "Close navigation menu");
+                document.body.style.overflow = "hidden";
+            }
+
+            function closeMobileMenu() {
+                mobileMenu.classList.remove("is-open");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Open navigation menu");
+                document.body.style.overflow = "";
+            }
 
             menuToggle.addEventListener("click", () => {
-                const isOpen = mobileMenu.classList.toggle("is-open");
-                menuToggle.setAttribute("aria-expanded", String(isOpen));
-                menuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+                const isOpen = mobileMenu.classList.contains("is-open");
+                if (isOpen) {
+                    closeMobileMenu();
+                } else {
+                    openMobileMenu();
+                }
             });
+
+            if (menuClose) {
+                menuClose.addEventListener("click", closeMobileMenu);
+            }
 
             mobileMenu.querySelectorAll("a").forEach((link) => {
                 link.addEventListener("click", () => {
-                    mobileMenu.classList.remove("is-open");
-                    menuToggle.setAttribute("aria-expanded", "false");
-                    menuToggle.setAttribute("aria-label", "Open navigation menu");
+                    closeMobileMenu();
                 });
+            });
+
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape" && mobileMenu.classList.contains("is-open")) {
+                    closeMobileMenu();
+                }
+            });
+
+            window.addEventListener("resize", () => {
+                if (window.innerWidth >= 1024 && mobileMenu.classList.contains("is-open")) {
+                    closeMobileMenu();
+                }
             });
 
             const form = document.getElementById("inquiry-form");
