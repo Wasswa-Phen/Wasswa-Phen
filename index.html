@@ -223,13 +223,42 @@
         }
 
         .social-pill {
-            transition: transform .2s ease, background-color .2s ease, color .2s ease;
+            transition: transform .2s ease, background-color .2s ease, color .2s ease, box-shadow .2s ease;
         }
 
         .social-pill:hover {
             transform: translateY(-3px);
             background: #1649d8;
             color: white;
+            box-shadow: 0 8px 20px rgba(22, 73, 216, .25);
+        }
+
+        .social-pill .fa-brands,
+        .social-pill .fa-solid {
+            font-size: 1.05rem;
+            transition: transform .2s ease;
+        }
+
+        .social-pill:hover .fa-brands,
+        .social-pill:hover .fa-solid {
+            transform: scale(1.15);
+        }
+
+        .footer-social-link .fa-brands,
+        .footer-social-link .fa-solid {
+            font-size: .85rem;
+            transition: transform .2s ease;
+        }
+
+        .footer-social-link:hover .fa-brands,
+        .footer-social-link:hover .fa-solid {
+            transform: scale(1.2);
+        }
+
+        .contact-icon-brand {
+            font-size: 1.15rem;
+            color: #1649d8;
+            transition: transform .2s ease;
         }
 
         .contact-link {
@@ -281,6 +310,7 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
     <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
 </head>
@@ -409,22 +439,22 @@
                     <div class="flex items-center justify-between gap-3 pt-1">
                         <a href="https://wa.me/256701951404" target="_blank" rel="noopener noreferrer"
                             class="flex-1 flex items-center justify-center gap-2 rounded-xl border border-blue-100 bg-blue-50/60 py-3 px-3 text-xs font-semibold text-[#07142f] hover:bg-blue-50 hover:border-blue-200 transition">
-                            <i data-lucide="phone" class="h-3.5 w-3.5 text-[#1649d8]" aria-hidden="true"></i>
+                            <i class="fa-brands fa-whatsapp text-sm text-[#25D366]" aria-hidden="true"></i>
                             <span>WhatsApp</span>
                         </a>
                         <a href="mailto:wasswastephen24@gmail.com"
                             class="flex-1 flex items-center justify-center gap-2 rounded-xl border border-blue-100 bg-blue-50/60 py-3 px-3 text-xs font-semibold text-[#07142f] hover:bg-blue-50 hover:border-blue-200 transition">
-                            <i data-lucide="mail" class="h-3.5 w-3.5 text-[#1649d8]" aria-hidden="true"></i>
+                            <i class="fa-solid fa-envelope text-sm text-[#1649d8]" aria-hidden="true"></i>
                             <span>Email</span>
                         </a>
                     </div>
 
                     <div class="flex items-center justify-center gap-4 pt-1 text-xs font-medium text-slate-500">
-                        <a href="https://linkedin.com/in/stephen-wasswa" target="_blank" rel="noopener noreferrer" class="hover:text-[#1649d8] transition">LinkedIn</a>
+                        <a href="https://linkedin.com/in/stephen-wasswa" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 hover:text-[#1649d8] transition"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>LinkedIn</a>
                         <span class="text-slate-300">•</span>
-                        <a href="https://github.com/Wasswa-Phen" target="_blank" rel="noopener noreferrer" class="hover:text-[#1649d8] transition">GitHub</a>
+                        <a href="https://github.com/Wasswa-Phen" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 hover:text-[#1649d8] transition"><i class="fa-brands fa-github" aria-hidden="true"></i>GitHub</a>
                         <span class="text-slate-300">•</span>
-                        <a href="https://instagram.com/wasswa_phen" target="_blank" rel="noopener noreferrer" class="hover:text-[#1649d8] transition">Instagram</a>
+                        <a href="https://instagram.com/wasswa_phen" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 hover:text-[#1649d8] transition"><i class="fa-brands fa-instagram" aria-hidden="true"></i>Instagram</a>
                     </div>
                 </div>
             </div>
@@ -751,8 +781,10 @@
                             an idea, a design need, or a digital experience to shape? Reach out directly or send an
                             inquiry below.</p>
                         <address class="mt-10 not-italic">
-                            <div class="mb-6 flex items-start gap-3"><i data-lucide="message-circle"
-                                    class="mt-1 h-5 w-5 shrink-0 text-[#1649d8]" aria-hidden="true"></i>
+                            <div class="mb-6 flex items-start gap-3.5">
+                                <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#25D366]/10">
+                                    <i class="fa-brands fa-whatsapp contact-icon-brand" style="color: #25D366;" aria-hidden="true"></i>
+                                </span>
                                 <div>
                                     <p data-template-id="contact-whatsapp-label"
                                         class="canva-text text-xs font-bold uppercase tracking-[.14em] text-[#1649d8]"
@@ -765,8 +797,10 @@
                                         701 951404</a>
                                 </div>
                             </div>
-                            <div class="mb-6 flex items-start gap-3"><i data-lucide="phone"
-                                    class="mt-1 h-5 w-5 shrink-0 text-[#1649d8]" aria-hidden="true"></i>
+                            <div class="mb-6 flex items-start gap-3.5">
+                                <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#FFCC00]/10">
+                                    <i class="fa-solid fa-phone contact-icon-brand" style="color: #1649d8;" aria-hidden="true"></i>
+                                </span>
                                 <div>
                                     <p data-template-id="contact-mtn-label"
                                         class="canva-text text-xs font-bold uppercase tracking-[.14em] text-[#1649d8]"
@@ -778,8 +812,10 @@
                                         763 260974</a>
                                 </div>
                             </div>
-                            <div class="flex items-start gap-3"><i data-lucide="mail"
-                                    class="mt-1 h-5 w-5 shrink-0 text-[#1649d8]" aria-hidden="true"></i>
+                            <div class="flex items-start gap-3.5">
+                                <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#1649d8]/10">
+                                    <i class="fa-solid fa-envelope contact-icon-brand" aria-hidden="true"></i>
+                                </span>
                                 <div>
                                     <p data-template-id="contact-email-label"
                                         class="canva-text text-xs font-bold uppercase tracking-[.14em] text-[#1649d8]"
@@ -792,26 +828,32 @@
                             </div>
                         </address>
                         <nav class="mt-10" aria-label="PHENY social profiles">
-                            <div class="flex flex-wrap gap-3"><a data-template-id="social-linkedin"
-                                    class="canva-link social-pill inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2.5 text-sm font-bold text-[#1649d8]"
+                            <div class="flex flex-wrap gap-3">
+                                <a data-template-id="social-whatsapp"
+                                    class="canva-link social-pill inline-flex items-center gap-2.5 rounded-full border border-blue-100 bg-white px-5 py-2.5 text-sm font-bold text-[#1649d8]"
+                                    href="https://wa.me/256701951404" target="_blank"
+                                    rel="noopener noreferrer" aria-label="WhatsApp"
+                                    style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>WhatsApp</a>
+                                <a data-template-id="social-linkedin"
+                                    class="canva-link social-pill inline-flex items-center gap-2.5 rounded-full border border-blue-100 bg-white px-5 py-2.5 text-sm font-bold text-[#1649d8]"
                                     href="https://linkedin.com/in/stephen-wasswa" target="_blank"
                                     rel="noopener noreferrer" aria-label="LinkedIn profile"
-                                    style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;">LinkedIn</a>
+                                    style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>LinkedIn</a>
                                 <a data-template-id="social-github"
-                                    class="canva-link social-pill inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2.5 text-sm font-bold text-[#1649d8]"
+                                    class="canva-link social-pill inline-flex items-center gap-2.5 rounded-full border border-blue-100 bg-white px-5 py-2.5 text-sm font-bold text-[#1649d8]"
                                     href="https://github.com/Wasswa-Phen" target="_blank" rel="noopener noreferrer"
                                     aria-label="GitHub profile"
-                                    style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;">GitHub</a>
+                                    style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;"><i class="fa-brands fa-github" aria-hidden="true"></i>GitHub</a>
                                 <a data-template-id="social-instagram"
-                                    class="canva-link social-pill inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2.5 text-sm font-bold text-[#1649d8]"
+                                    class="canva-link social-pill inline-flex items-center gap-2.5 rounded-full border border-blue-100 bg-white px-5 py-2.5 text-sm font-bold text-[#1649d8]"
                                     href="https://instagram.com/wasswa_phen" target="_blank" rel="noopener noreferrer"
                                     aria-label="Instagram profile"
-                                    style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;">Instagram</a>
+                                    style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;"><i class="fa-brands fa-instagram" aria-hidden="true"></i>Instagram</a>
                                 <a data-template-id="social-facebook"
-                                    class="canva-link social-pill inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2.5 text-sm font-bold text-[#1649d8]"
+                                    class="canva-link social-pill inline-flex items-center gap-2.5 rounded-full border border-blue-100 bg-white px-5 py-2.5 text-sm font-bold text-[#1649d8]"
                                     href="https://facebook.com/WasswaPhenDaniel" target="_blank"
                                     rel="noopener noreferrer" aria-label="Facebook profile"
-                                    style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;">Facebook</a>
+                                    style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i>Facebook</a>
                             </div>
                         </nav>
                     </div>
@@ -860,36 +902,36 @@
                 <p data-template-id="footer-brand"
                     class="canva-text display-font text-sm font-extrabold tracking-[.16em] text-white"
                     style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 16px;">PHENY</p>
-                <nav class="flex flex-wrap gap-x-5 gap-y-3" aria-label="Footer social links"><a
-                        data-template-id="footer-linkedin"
-                        class="canva-link inline-flex items-center gap-2 text-xs font-semibold text-[#b9c8ed] hover:text-[#2de5ff]"
+                <nav class="flex flex-wrap gap-x-5 gap-y-3" aria-label="Footer social links">
+                    <a data-template-id="footer-linkedin"
+                        class="canva-link footer-social-link inline-flex items-center gap-2 text-xs font-semibold text-[#b9c8ed] hover:text-[#2de5ff] transition"
                         href="https://linkedin.com/in/stephen-wasswa" target="_blank" rel="noopener noreferrer"
                         aria-label="LinkedIn profile"
-                        style="color: rgb(185, 200, 237); font-weight: 600; font-style: normal; font-size: 16px;">LinkedIn</a>
+                        style="color: rgb(185, 200, 237); font-weight: 600; font-style: normal; font-size: 16px;"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>LinkedIn</a>
                     <a data-template-id="footer-github"
-                        class="canva-link inline-flex items-center gap-2 text-xs font-semibold text-[#b9c8ed] hover:text-[#2de5ff]"
+                        class="canva-link footer-social-link inline-flex items-center gap-2 text-xs font-semibold text-[#b9c8ed] hover:text-[#2de5ff] transition"
                         href="https://github.com/Wasswa-Phen" target="_blank" rel="noopener noreferrer"
                         aria-label="GitHub profile"
-                        style="color: rgb(185, 200, 237); font-weight: 600; font-style: normal; font-size: 16px;">GitHub</a>
+                        style="color: rgb(185, 200, 237); font-weight: 600; font-style: normal; font-size: 16px;"><i class="fa-brands fa-github" aria-hidden="true"></i>GitHub</a>
                     <a data-template-id="footer-instagram"
-                        class="canva-link inline-flex items-center gap-2 text-xs font-semibold text-[#b9c8ed] hover:text-[#2de5ff]"
+                        class="canva-link footer-social-link inline-flex items-center gap-2 text-xs font-semibold text-[#b9c8ed] hover:text-[#2de5ff] transition"
                         href="https://instagram.com/wasswa_phen" target="_blank" rel="noopener noreferrer"
                         aria-label="Instagram profile"
-                        style="color: rgb(185, 200, 237); font-weight: 600; font-style: normal; font-size: 16px;">Instagram</a>
+                        style="color: rgb(185, 200, 237); font-weight: 600; font-style: normal; font-size: 16px;"><i class="fa-brands fa-instagram" aria-hidden="true"></i>Instagram</a>
                     <a data-template-id="footer-facebook"
-                        class="canva-link inline-flex items-center gap-2 text-xs font-semibold text-[#b9c8ed] hover:text-[#2de5ff]"
+                        class="canva-link footer-social-link inline-flex items-center gap-2 text-xs font-semibold text-[#b9c8ed] hover:text-[#2de5ff] transition"
                         href="https://facebook.com/WasswaPhenDaniel" target="_blank" rel="noopener noreferrer"
                         aria-label="Facebook profile"
-                        style="color: rgb(185, 200, 237); font-weight: 600; font-style: normal; font-size: 16px;">Facebook</a>
+                        style="color: rgb(185, 200, 237); font-weight: 600; font-style: normal; font-size: 16px;"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i>Facebook</a>
                     <a data-template-id="footer-email"
-                        class="canva-link inline-flex items-center gap-2 text-xs font-semibold text-[#b9c8ed] hover:text-[#2de5ff]"
+                        class="canva-link footer-social-link inline-flex items-center gap-2 text-xs font-semibold text-[#b9c8ed] hover:text-[#2de5ff] transition"
                         href="mailto:wasswastephen24@gmail.com" aria-label="Email PHENY"
-                        style="color: rgb(185, 200, 237); font-weight: 600; font-style: normal; font-size: 16px;">Email</a>
+                        style="color: rgb(185, 200, 237); font-weight: 600; font-style: normal; font-size: 16px;"><i class="fa-solid fa-envelope" aria-hidden="true"></i>Email</a>
                     <a data-template-id="footer-phone"
-                        class="canva-link inline-flex items-center gap-2 text-xs font-semibold text-[#b9c8ed] hover:text-[#2de5ff]"
+                        class="canva-link footer-social-link inline-flex items-center gap-2 text-xs font-semibold text-[#b9c8ed] hover:text-[#2de5ff] transition"
                         href="https://wa.me/256701951404" target="_blank" rel="noopener noreferrer"
                         aria-label="WhatsApp PHENY"
-                        style="color: rgb(185, 200, 237); font-weight: 600; font-style: normal; font-size: 16px;">WhatsApp</a>
+                        style="color: rgb(185, 200, 237); font-weight: 600; font-style: normal; font-size: 16px;"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>WhatsApp</a>
                 </nav>
             </div>
         </footer>
