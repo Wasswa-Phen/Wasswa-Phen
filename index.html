@@ -18,17 +18,17 @@
     <meta property="og:title" content="Wasswa Stephen (PHENY) — Creative Technologist &amp; Designer">
     <meta property="og:description"
         content="Turning ideas into thoughtful digital experiences through design, technology, and purposeful problem-solving.">
-    <meta property="og:image" content="https://wasswa-phen.github.io/Wasswa-Phen/Wasswa%20Stephen.png">
+    <meta property="og:image" content="https://wasswa-phen.github.io/Wasswa-Phen/wasswa-stephen.png">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Wasswa Stephen (PHENY) — Creative Technologist &amp; Designer">
     <meta name="twitter:description"
         content="Turning ideas into thoughtful digital experiences through design, technology, and purposeful problem-solving.">
-    <meta name="twitter:image" content="https://wasswa-phen.github.io/Wasswa-Phen/Wasswa%20Stephen.png">
+    <meta name="twitter:image" content="https://wasswa-phen.github.io/Wasswa-Phen/wasswa-stephen.png">
 
     <!-- Favicons & Manifest -->
-    <link rel="icon" type="image/png" href="Wasswa Stephen.png">
+    <link rel="icon" type="image/png" href="wasswa-stephen.png">
     <link rel="manifest" href="site.webmanifest">
 
     <!-- Google Fonts Preconnect & Styles -->
@@ -103,7 +103,8 @@
         }
 
         .nav-item:hover,
-        .nav-item:focus-visible {
+        .nav-item:focus-visible,
+        .nav-item.active {
             color: #ffffff;
         }
 
@@ -120,7 +121,8 @@
         }
 
         .nav-item:hover::after,
-        .nav-item:focus-visible::after {
+        .nav-item:focus-visible::after,
+        .nav-item.active::after {
             width: 100%;
         }
 
@@ -737,12 +739,42 @@
                 height: 2.75rem;
             }
         }
+
+        /* Subtle Scroll Animations using CSS translate & opacity (preserves transform for hover) */
+        .js-anim-ready .anim-slide-left {
+            opacity: 0;
+            translate: -28px 0;
+            transition: opacity 0.75s ease-out, translate 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .js-anim-ready .anim-slide-right {
+            opacity: 0;
+            translate: 28px 0;
+            transition: opacity 0.75s ease-out, translate 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .js-anim-ready .anim-fade-up {
+            opacity: 0;
+            translate: 0 24px;
+            transition: opacity 0.75s ease-out, translate 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .js-anim-ready .anim-slide-left.is-visible,
+        .js-anim-ready .anim-slide-right.is-visible,
+        .js-anim-ready .anim-fade-up.is-visible {
+            opacity: 1;
+            translate: 0 0;
+        }
+        .js-anim-ready .anim-stagger-parent > *:nth-child(1) { transition-delay: 0.05s; }
+        .js-anim-ready .anim-stagger-parent > *:nth-child(2) { transition-delay: 0.15s; }
+        .js-anim-ready .anim-stagger-parent > *:nth-child(3) { transition-delay: 0.25s; }
+        .js-anim-ready .anim-stagger-parent > *:nth-child(4) { transition-delay: 0.35s; }
+        .js-anim-ready .anim-stagger-parent > *:nth-child(5) { transition-delay: 0.45s; }
+        .js-anim-ready .anim-stagger-parent > *:nth-child(6) { transition-delay: 0.55s; }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
     <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+    <script src="site.js" defer></script>
 </head>
 
 <body data-template-id="__page-root">
@@ -751,20 +783,19 @@
         <header class="site-header sticky top-0 z-50 border-b border-white/10 bg-[#060c19]/90 backdrop-blur-md"
             aria-label="Primary navigation">
             <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
-                <a href="#home" class="brand-link flex items-center gap-3 group" aria-label="PHENY home">
+                <a href="index.html" class="brand-link flex items-center gap-3 group" aria-label="PHENY home">
                     <span
                         class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#1649d8] to-[#09226b] font-bold text-white shadow-md shadow-blue-900/40 border border-blue-400/30 transition group-hover:scale-105 group-hover:border-[#2de5ff]/60">P</span>
                     <span
                         class="display-font text-base font-extrabold tracking-[0.18em] text-white transition group-hover:text-[#2de5ff]">PHENY</span>
                 </a>
                 <div class="hidden items-center gap-7 lg:flex">
-                    <a class="nav-item" href="#home">Home</a>
-                    <a class="nav-item" href="#about">About</a>
-                    <a class="nav-item" href="#services">Services</a>
-                    <a class="nav-item" href="#work">Work</a>
-                    <a class="nav-item" href="#philosophy">Philosophy</a>
-                    <a class="nav-item" href="#contact">Contact</a>
-                    <a class="nav-cta-btn" href="#contact">Let's Connect</a>
+                    <a class="nav-item active" href="index.html">Home</a>
+                    <a class="nav-item" href="about.html">About</a>
+                    <a class="nav-item" href="services.html">Services</a>
+                    <a class="nav-item" href="work.html">Work</a>
+                    <a class="nav-item" href="contact.html">Contact</a>
+                    <a class="nav-cta-btn" href="start-project.html">Start a Project</a>
                 </div>
                 <button id="menu-toggle" type="button"
                     class="rounded-xl p-2.5 text-white/90 hover:text-white hover:bg-white/10 transition lg:hidden"
@@ -778,7 +809,7 @@
         <div id="mobile-menu" class="menu-panel lg:hidden" role="dialog" aria-modal="true"
             aria-label="Mobile navigation">
             <div class="flex items-center justify-between border-b border-blue-100/80 px-5 py-4 bg-white shrink-0">
-                <a href="#home" class="flex items-center gap-3 rounded-sm" aria-label="PHENY home">
+                <a href="index.html" class="flex items-center gap-3 rounded-sm" aria-label="PHENY home">
                     <span
                         class="flex h-10 w-10 items-center justify-center rounded-xl bg-[#1649d8] font-bold text-white shadow-sm">P</span>
                     <span class="display-font text-base font-extrabold tracking-[0.16em] text-[#07142f]">PHENY</span>
@@ -791,18 +822,18 @@
             </div>
             <div class="flex-1 overflow-y-auto overscroll-contain px-5 py-5 flex flex-col justify-between">
                 <nav class="flex flex-col gap-1.5" aria-label="Mobile navigation links">
-                    <a class="group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] transition hover:bg-blue-50/80 active:bg-blue-100/60"
-                        href="#home">
+                    <a class="group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] bg-blue-50/80 transition"
+                        href="index.html">
                         <span class="flex items-center gap-3.5">
                             <span
-                                class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-[#1649d8] group-hover:bg-[#1649d8] group-hover:text-white transition">01</span>
-                            <span class="display-font text-xl font-bold tracking-tight">Home</span>
+                                class="flex h-7 w-7 items-center justify-center rounded-lg bg-[#1649d8] text-xs font-bold text-white transition">01</span>
+                            <span class="display-font text-xl font-bold tracking-tight text-[#1649d8]">Home</span>
                         </span>
                         <i data-lucide="chevron-right"
-                            class="h-5 w-5 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-[#1649d8]"></i>
+                            class="h-5 w-5 text-[#1649d8]"></i>
                     </a>
                     <a class="group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] transition hover:bg-blue-50/80 active:bg-blue-100/60"
-                        href="#about">
+                        href="about.html">
                         <span class="flex items-center gap-3.5">
                             <span
                                 class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-[#1649d8] group-hover:bg-[#1649d8] group-hover:text-white transition">02</span>
@@ -812,7 +843,7 @@
                             class="h-5 w-5 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-[#1649d8]"></i>
                     </a>
                     <a class="group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] transition hover:bg-blue-50/80 active:bg-blue-100/60"
-                        href="#services">
+                        href="services.html">
                         <span class="flex items-center gap-3.5">
                             <span
                                 class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-[#1649d8] group-hover:bg-[#1649d8] group-hover:text-white transition">03</span>
@@ -822,7 +853,7 @@
                             class="h-5 w-5 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-[#1649d8]"></i>
                     </a>
                     <a class="group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] transition hover:bg-blue-50/80 active:bg-blue-100/60"
-                        href="#work">
+                        href="work.html">
                         <span class="flex items-center gap-3.5">
                             <span
                                 class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-[#1649d8] group-hover:bg-[#1649d8] group-hover:text-white transition">04</span>
@@ -832,20 +863,10 @@
                             class="h-5 w-5 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-[#1649d8]"></i>
                     </a>
                     <a class="group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] transition hover:bg-blue-50/80 active:bg-blue-100/60"
-                        href="#philosophy">
+                        href="contact.html">
                         <span class="flex items-center gap-3.5">
                             <span
                                 class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-[#1649d8] group-hover:bg-[#1649d8] group-hover:text-white transition">05</span>
-                            <span class="display-font text-xl font-bold tracking-tight">Philosophy</span>
-                        </span>
-                        <i data-lucide="chevron-right"
-                            class="h-5 w-5 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-[#1649d8]"></i>
-                    </a>
-                    <a class="group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] transition hover:bg-blue-50/80 active:bg-blue-100/60"
-                        href="#contact">
-                        <span class="flex items-center gap-3.5">
-                            <span
-                                class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-[#1649d8] group-hover:bg-[#1649d8] group-hover:text-white transition">06</span>
                             <span class="display-font text-xl font-bold tracking-tight">Contact</span>
                         </span>
                         <i data-lucide="chevron-right"
@@ -855,7 +876,7 @@
 
                 <div class="mt-6 pt-5 border-t border-blue-100/80 flex flex-col gap-3.5">
                     <a class="flex items-center justify-center gap-2 rounded-2xl bg-[#1649d8] px-5 py-4 text-base font-bold text-white shadow-md shadow-blue-600/20 transition hover:bg-[#0d36ae] active:scale-[0.98]"
-                        href="#contact">
+                        href="start-project.html">
                         <span>Start a Project</span>
                         <i data-lucide="arrow-right" class="h-4 w-4" aria-hidden="true"></i>
                     </a>
@@ -890,9 +911,9 @@
             </div>
         </div>
 
-        <main>
+        <main id="top">
             <!-- =========================================================
-                 REDESIGNED HERO SECTION — PHENY: Digital Craft in Motion
+                 HERO SECTION — PHENY: Digital Craft in Motion
                  ========================================================= -->
             <section id="home" class="hero-section">
                 <!-- Deliberate Visual System Background -->
@@ -907,7 +928,7 @@
                     class="relative z-10 mx-auto max-w-7xl px-5 pt-12 pb-14 sm:pt-16 sm:pb-20 lg:px-8 lg:pt-20 lg:pb-24">
                     <div class="grid items-center gap-12 lg:grid-cols-[1.12fr_.88fr] lg:gap-14">
                         <!-- Left: Typography, Identity & Actions -->
-                        <div class="max-w-2xl lg:max-w-none">
+                        <div class="max-w-2xl lg:max-w-none anim-slide-left">
                             <!-- Kicker / Status Indicator -->
                             <div
                                 class="anim-load anim-delay-kicker inline-flex items-center gap-3 rounded-full border border-[#2de5ff]/30 bg-[#2de5ff]/[0.08] px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[#2de5ff] backdrop-blur-sm">
@@ -942,14 +963,14 @@
 
                             <!-- Primary & Secondary Calls to Action -->
                             <div class="anim-load anim-delay-actions mt-9 flex flex-wrap items-center gap-4">
-                                <a href="#work" class="hero-btn-primary group">
+                                <a href="work.html" class="hero-btn-primary group">
                                     <span>EXPLORE MY WORK</span>
                                     <i data-lucide="arrow-down-right"
                                         class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5"
                                         aria-hidden="true"></i>
                                 </a>
-                                <a href="#contact" class="hero-btn-secondary group">
-                                    <span>LET'S CONNECT</span>
+                                <a href="start-project.html" class="hero-btn-secondary group">
+                                    <span>START A PROJECT</span>
                                     <i data-lucide="arrow-right"
                                         class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
                                         aria-hidden="true"></i>
@@ -980,7 +1001,7 @@
                         </div>
 
                         <!-- Right: Professional Portrait Integrated Stage -->
-                        <div class="relative mx-auto w-full max-w-md lg:max-w-none">
+                        <div class="relative mx-auto w-full max-w-md lg:max-w-none anim-slide-right">
                             <div class="hero-portrait-stage anim-portrait">
                                 <!-- Ambient glow bloom behind portrait -->
                                 <div class="portrait-ambient-glow" aria-hidden="true"></div>
@@ -991,7 +1012,7 @@
                                     <div class="frame-tag frame-tag-tl" aria-hidden="true">+</div>
                                     <div class="frame-tag frame-tag-tr" aria-hidden="true">+</div>
 
-                                    <img src="Wasswa Stephen.png" alt="Professional portrait of Wasswa Stephen"
+                                    <img src="wasswa-stephen.png" alt="Professional portrait of Wasswa Stephen"
                                         width="1024" height="1024" class="portrait-img" loading="eager"
                                         fetchpriority="high">
 
@@ -1020,7 +1041,7 @@
 
                     <!-- Subtle Scroll Indicator -->
                     <div class="anim-load anim-delay-scroll mt-14 flex justify-center lg:justify-start">
-                        <a href="#about" class="hero-scroll-link group" aria-label="Scroll to about section">
+                        <a href="#about-preview" class="hero-scroll-link group" aria-label="Scroll to about preview">
                             <span class="scroll-track">
                                 <span class="scroll-thumb"></span>
                             </span>
@@ -1032,9 +1053,13 @@
                     </div>
                 </div>
             </section>
-            <section id="about" class="blue-grid bg-[#f7f9ff] py-20 sm:py-24">
+
+            <!-- =========================================================
+                 ABOUT PREVIEW SECTION
+                 ========================================================= -->
+            <section id="about-preview" class="blue-grid bg-[#f7f9ff] py-20 sm:py-24">
                 <div class="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[.75fr_1.25fr] lg:px-8">
-                    <div>
+                    <div class="anim-slide-left">
                         <p data-template-id="about-eyebrow"
                             class="canva-text text-xs font-bold uppercase tracking-[.2em] text-[#1649d8]"
                             style="color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;">
@@ -1044,20 +1069,23 @@
                             style="color: rgb(7, 20, 47); font-weight: 800; font-style: normal; font-size: 24px;">Where
                             visual thinking meets purposeful technology.</h2>
                     </div>
-                    <div>
+                    <div class="anim-slide-right">
                         <p data-template-id="about-copy" class="canva-text max-w-3xl text-lg leading-8 text-[#40506f]"
                             style="color: rgb(64, 80, 111); font-weight: 400; font-style: normal; font-size: 16px;">I am
                             a Software Engineering student and creative technologist passionate about visual
                             communication, digital products and user-centered experiences. I combine graphic design, web
                             design, UI/UX principles and software engineering to create digital solutions that are
                             visually compelling, functional and purposeful.</p>
-                        <div class="mt-8 flex flex-wrap gap-3"><span data-template-id="about-tag-1"
+                        <div class="mt-8 flex flex-wrap gap-3">
+                            <span data-template-id="about-tag-1"
                                 class="canva-tag rounded-full border border-blue-200 bg-white px-4 py-2 text-xs font-semibold text-[#1649d8]"
                                 style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 600; font-style: normal; font-size: 16px;">Graphic
-                                Design</span> <span data-template-id="about-tag-2"
+                                Design</span>
+                            <span data-template-id="about-tag-2"
                                 class="canva-tag rounded-full border border-blue-200 bg-white px-4 py-2 text-xs font-semibold text-[#1649d8]"
                                 style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 600; font-style: normal; font-size: 16px;">Web
-                                Design</span> <span data-template-id="about-tag-3"
+                                Design</span>
+                            <span data-template-id="about-tag-3"
                                 class="canva-tag rounded-full border border-blue-200 bg-white px-4 py-2 text-xs font-semibold text-[#1649d8]"
                                 style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 600; font-style: normal; font-size: 16px;">UI/UX</span>
                             <span data-template-id="about-tag-4"
@@ -1065,13 +1093,25 @@
                                 style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 600; font-style: normal; font-size: 16px;">Software
                                 Engineering</span>
                         </div>
+                        <div class="mt-8">
+                            <a href="about.html"
+                                class="canva-button inline-flex items-center gap-2 rounded-full bg-[#1649d8] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#0d36ae]"
+                                style="background: rgb(22, 73, 216); color: rgb(255, 255, 255); font-weight: 700;">
+                                <span>Learn More About Stephen</span>
+                                <i data-lucide="arrow-right" class="h-4 w-4" aria-hidden="true"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
-            <section id="services" class="bg-white py-20 sm:py-24">
+
+            <!-- =========================================================
+                 SERVICES PREVIEW SECTION (3 FEATURED CARDS)
+                 ========================================================= -->
+            <section id="services-preview" class="bg-white py-20 sm:py-24">
                 <div class="mx-auto max-w-7xl px-5 lg:px-8">
                     <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-                        <div class="max-w-2xl">
+                        <div class="max-w-2xl anim-slide-left">
                             <p data-template-id="services-eyebrow"
                                 class="canva-text text-xs font-bold uppercase tracking-[.2em] text-[#1649d8]"
                                 style="color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;">
@@ -1082,13 +1122,13 @@
                                 Creative capability, designed around clarity.</h2>
                         </div>
                         <p data-template-id="services-intro"
-                            class="canva-text max-w-md text-base leading-7 text-[#52617d]"
+                            class="canva-text max-w-md text-base leading-7 text-[#52617d] anim-slide-right"
                             style="color: rgb(82, 97, 125); font-weight: 400; font-style: normal; font-size: 16px;">A
                             focused set of visual and digital design services for ideas that need to communicate with
                             confidence.</p>
                     </div>
-                    <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                        <article data-template-id="service-card-1" class="canva-card service-card rounded-2xl p-6"
+                    <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 anim-stagger-parent">
+                        <article data-template-id="service-card-1" class="canva-card service-card rounded-2xl p-6 anim-fade-up"
                             style="background: rgb(255, 255, 255);">
                             <i data-lucide="pen-tool" class="mb-8 h-7 w-7 text-[#1649d8]" aria-hidden="true"></i>
                             <h3 data-template-id="service-title-1"
@@ -1096,7 +1136,7 @@
                                 style="color: rgb(7, 20, 47); font-weight: 700; font-style: normal; font-size: 19px;">
                                 Graphic Design</h3>
                         </article>
-                        <article data-template-id="service-card-2" class="canva-card service-card rounded-2xl p-6"
+                        <article data-template-id="service-card-2" class="canva-card service-card rounded-2xl p-6 anim-fade-up"
                             style="background: rgb(255, 255, 255);">
                             <i data-lucide="badge" class="mb-8 h-7 w-7 text-[#1649d8]" aria-hidden="true"></i>
                             <h3 data-template-id="service-title-2"
@@ -1104,24 +1144,7 @@
                                 style="color: rgb(7, 20, 47); font-weight: 700; font-style: normal; font-size: 19px;">
                                 Brand &amp; Visual Identity</h3>
                         </article>
-                        <article data-template-id="service-card-3" class="canva-card service-card rounded-2xl p-6"
-                            style="background: rgb(255, 255, 255);">
-                            <i data-lucide="layout-template" class="mb-8 h-7 w-7 text-[#1649d8]" aria-hidden="true"></i>
-                            <h3 data-template-id="service-title-3"
-                                class="canva-text display-font text-lg font-bold text-[#07142f]"
-                                style="color: rgb(7, 20, 47); font-weight: 700; font-style: normal; font-size: 19px;">
-                                Posters &amp; Flyers</h3>
-                        </article>
-                        <article data-template-id="service-card-4" class="canva-card service-card rounded-2xl p-6"
-                            style="background: rgb(255, 255, 255);">
-                            <i data-lucide="monitor-smartphone" class="mb-8 h-7 w-7 text-[#1649d8]"
-                                aria-hidden="true"></i>
-                            <h3 data-template-id="service-title-4"
-                                class="canva-text display-font text-lg font-bold text-[#07142f]"
-                                style="color: rgb(7, 20, 47); font-weight: 700; font-style: normal; font-size: 19px;">
-                                Social Media Graphics</h3>
-                        </article>
-                        <article data-template-id="service-card-5" class="canva-card service-card rounded-2xl p-6"
+                        <article data-template-id="service-card-5" class="canva-card service-card rounded-2xl p-6 anim-fade-up"
                             style="background: rgb(255, 255, 255);">
                             <i data-lucide="panels-top-left" class="mb-8 h-7 w-7 text-[#1649d8]" aria-hidden="true"></i>
                             <h3 data-template-id="service-title-5"
@@ -1129,45 +1152,24 @@
                                 style="color: rgb(7, 20, 47); font-weight: 700; font-style: normal; font-size: 19px;">
                                 Web Design</h3>
                         </article>
-                        <article data-template-id="service-card-6" class="canva-card service-card rounded-2xl p-6"
-                            style="background: rgb(255, 255, 255);">
-                            <i data-lucide="mouse-pointer-2" class="mb-8 h-7 w-7 text-[#1649d8]" aria-hidden="true"></i>
-                            <h3 data-template-id="service-title-6"
-                                class="canva-text display-font text-lg font-bold text-[#07142f]"
-                                style="color: rgb(7, 20, 47); font-weight: 700; font-style: normal; font-size: 19px;">
-                                UI/UX Design</h3>
-                        </article>
-                        <article data-template-id="service-card-7" class="canva-card service-card rounded-2xl p-6"
-                            style="background: rgb(255, 255, 255);">
-                            <i data-lucide="globe-2" class="mb-8 h-7 w-7 text-[#1649d8]" aria-hidden="true"></i>
-                            <h3 data-template-id="service-title-7"
-                                class="canva-text display-font text-lg font-bold text-[#07142f]"
-                                style="color: rgb(7, 20, 47); font-weight: 700; font-style: normal; font-size: 19px;">
-                                Website &amp; Landing Page Design</h3>
-                        </article>
-                        <article data-template-id="service-card-8" class="canva-card service-card rounded-2xl p-6"
-                            style="background: rgb(255, 255, 255);">
-                            <i data-lucide="sparkles" class="mb-8 h-7 w-7 text-[#1649d8]" aria-hidden="true"></i>
-                            <h3 data-template-id="service-title-8"
-                                class="canva-text display-font text-lg font-bold text-[#07142f]"
-                                style="color: rgb(7, 20, 47); font-weight: 700; font-style: normal; font-size: 19px;">
-                                Digital Content Design</h3>
-                        </article>
-                        <article data-template-id="service-card-9" class="canva-card service-card rounded-2xl p-6"
-                            style="background: rgb(255, 255, 255);">
-                            <i data-lucide="presentation" class="mb-8 h-7 w-7 text-[#1649d8]" aria-hidden="true"></i>
-                            <h3 data-template-id="service-title-9"
-                                class="canva-text display-font text-lg font-bold text-[#07142f]"
-                                style="color: rgb(7, 20, 47); font-weight: 700; font-style: normal; font-size: 19px;">
-                                Presentation Design</h3>
-                        </article>
+                    </div>
+                    <div class="mt-10 text-center">
+                        <a href="services.html"
+                            class="canva-button inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-7 py-3.5 text-sm font-bold text-[#1649d8] shadow-sm transition hover:-translate-y-0.5 hover:border-blue-400 hover:bg-blue-50/50">
+                            <span>View All 9 Services</span>
+                            <i data-lucide="arrow-right" class="h-4 w-4" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
             </section>
-            <section id="work" class="bg-[#0b1d44] py-20 sm:py-24">
+
+            <!-- =========================================================
+                 SELECTED WORK PREVIEW SECTION
+                 ========================================================= -->
+            <section id="work-preview" class="bg-[#0b1d44] py-20 sm:py-24">
                 <div class="mx-auto max-w-7xl px-5 lg:px-8">
                     <div class="grid gap-10 lg:grid-cols-[1.05fr_.95fr]">
-                        <div>
+                        <div class="anim-slide-left">
                             <p data-template-id="work-eyebrow"
                                 class="canva-text text-xs font-bold uppercase tracking-[.2em] text-[#2de5ff]"
                                 style="color: rgb(45, 229, 255); font-weight: 700; font-style: normal; font-size: 16px;">
@@ -1177,19 +1179,21 @@
                                 style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 24px;">
                                 Thoughtful digital design begins with the right questions.</h2>
                         </div>
-                        <div class="border-l border-[#2de5ff]/40 pl-6 sm:pl-8">
+                        <div class="border-l border-[#2de5ff]/40 pl-6 sm:pl-8 anim-slide-right">
                             <p data-template-id="work-copy" class="canva-text text-lg leading-8 text-[#dce7ff]"
                                 style="color: rgb(220, 231, 255); font-weight: 400; font-style: normal; font-size: 16px;">
                                 My approach brings visual communication, interface thinking and technical curiosity
                                 together. Every design direction is shaped to be clear, useful and built with intention.
-                            </p><a data-template-id="work-contact-link"
-                                class="canva-link mt-7 inline-flex items-center gap-2 text-sm font-bold text-[#2de5ff] underline decoration-[#2de5ff]/40 underline-offset-8 transition hover:text-white"
-                                href="#contact"
-                                style="color: rgb(45, 229, 255); font-weight: 700; font-style: normal; font-size: 16px;">Start
-                                a conversation</a>
+                            </p>
+                            <a class="canva-link mt-7 inline-flex items-center gap-2 text-sm font-bold text-[#2de5ff] underline decoration-[#2de5ff]/40 underline-offset-8 transition hover:text-white"
+                                href="work.html"
+                                style="color: rgb(45, 229, 255); font-weight: 700; font-style: normal; font-size: 16px;">
+                                <span>Explore all projects &amp; testimonials</span>
+                                <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                            </a>
                         </div>
                     </div>
-                    <div class="project-card mt-14 grid overflow-hidden rounded-[1.65rem] lg:grid-cols-[1.1fr_.9fr]">
+                    <div class="project-card mt-14 grid overflow-hidden rounded-[1.65rem] lg:grid-cols-[1.1fr_.9fr] anim-fade-up">
                         <div class="bg-[#07142f] p-6 sm:p-10 flex items-center justify-center">
                             <a href="https://tandtjuniorschool.com" target="_blank" rel="noopener noreferrer"
                                 class="group relative flex flex-col items-center justify-center w-full h-full min-h-[280px] sm:min-h-[340px] rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-6 sm:p-8 text-center transition-all duration-300 hover:border-[#2de5ff]/50 hover:bg-white/[0.1] hover:shadow-[0_0_35px_rgba(45,229,255,0.2)]"
@@ -1198,7 +1202,7 @@
                                     <div
                                         class="absolute -inset-4 rounded-full bg-[#2de5ff]/15 blur-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                                     </div>
-                                    <img src="tandtSchoolLogo.png" alt="T & T Junior School Logo"
+                                    <img src="tandtSchoolLogo.png" alt="T & T Junior School Logo" width="777" height="800"
                                         class="relative max-h-48 sm:max-h-56 w-auto object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.4)] transition-transform duration-300 group-hover:scale-105"
                                         loading="lazy">
                                 </div>
@@ -1221,222 +1225,58 @@
                             <p data-template-id="project-description"
                                 class="canva-text mt-5 max-w-md text-base leading-7 text-[#52617d]"
                                 style="color: rgb(82, 97, 125); font-weight: 400; font-style: normal; font-size: 16px;">
-                                Client-hosted website.</p><a data-template-id="project-url-link"
+                                Designed and developed the primary web presence for T&amp;T Junior School, focusing on clear information architecture and mobile accessibility.</p>
+                            <a data-template-id="project-url-link"
                                 class="canva-link project-url mt-6 inline-flex items-center gap-2 text-sm font-semibold underline decoration-[#2de5ff] decoration-2 underline-offset-4"
                                 href="https://tandtjuniorschool.com" target="_blank" rel="noopener noreferrer"
                                 style="color: rgb(22, 73, 216); font-weight: 600; font-style: normal; font-size: 16px;">https://tandtjuniorschool.com</a>
-                            <a data-template-id="project-visit-button"
-                                class="canva-button mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-[#1649d8] px-6 py-4 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#0d36ae]"
-                                href="https://tandtjuniorschool.com" target="_blank" rel="noopener noreferrer"
-                                style="background: rgb(22, 73, 216); color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 16px;">Visit
-                                Website</a>
+                            <div class="mt-8 flex flex-wrap gap-4">
+                                <a class="canva-button inline-flex w-fit items-center gap-2 rounded-full bg-[#1649d8] px-6 py-4 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#0d36ae]"
+                                    href="https://tandtjuniorschool.com" target="_blank" rel="noopener noreferrer"
+                                    style="background: rgb(22, 73, 216); color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 16px;">Visit
+                                    Website</a>
+                                <a class="canva-button inline-flex w-fit items-center gap-2 rounded-full border border-blue-200 bg-white px-6 py-4 text-sm font-bold text-[#07142f] transition hover:-translate-y-0.5 hover:border-blue-400"
+                                    href="work.html">
+                                    <span>View Portfolio Page</span>
+                                    <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                                </a>
+                            </div>
                         </article>
                     </div>
                 </div>
             </section>
-            <section id="testimonials" class="blue-grid bg-[#f7f9ff] py-20 sm:py-24">
-                <div class="mx-auto max-w-7xl px-5 lg:px-8">
-                    <div class="max-w-2xl">
-                        <p data-template-id="testimonials-eyebrow"
-                            class="canva-text text-xs font-bold uppercase tracking-[.2em] text-[#1649d8]"
-                            style="color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;">
-                            Client Testimonials</p>
-                        <h2 data-template-id="testimonials-heading"
-                            class="canva-text display-font mt-4 text-4xl font-extrabold tracking-[-.045em] text-[#07142f] sm:text-5xl"
-                            style="color: rgb(7, 20, 47); font-weight: 800; font-style: normal; font-size: 24px;">
-                            Experiences worth sharing.</h2>
-                        <p data-template-id="testimonials-intro"
-                            class="canva-text mt-5 max-w-xl text-lg leading-8 text-[#52617d]"
-                            style="color: rgb(82, 97, 125); font-weight: 400; font-style: normal; font-size: 16px;">A
-                            dedicated space for genuine client feedback as it becomes available.</p>
-                    </div>
-                    <article data-template-id="testimonials-placeholder-card"
-                        class="canva-card testimonial-card mt-12 rounded-[1.65rem] p-7 sm:p-10"
-                        style="background: rgb(255, 255, 255);">
-                        <div class="flex flex-col gap-7 sm:flex-row sm:items-center">
-                            <div
-                                class="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-[#07142f] text-[#2de5ff]">
-                                <i data-lucide="quote" class="h-7 w-7" aria-hidden="true"></i>
-                            </div>
-                            <div>
-                                <h3 data-template-id="testimonials-empty-title"
-                                    class="canva-text display-font text-2xl font-extrabold tracking-[-.025em] text-[#07142f]"
-                                    style="color: rgb(7, 20, 47); font-weight: 800; font-style: normal; font-size: 19px;">
-                                    Client testimonials will appear here</h3>
-                                <p data-template-id="testimonials-empty-copy"
-                                    class="canva-text mt-3 max-w-2xl leading-7 text-[#52617d]"
-                                    style="color: rgb(82, 97, 125); font-weight: 400; font-style: normal; font-size: 16px;">
-                                    Add feedback from a client to showcase their experience.</p>
-                            </div>
-                            <div class="sm:ml-auto"><span data-template-id="testimonials-placeholder-tag"
-                                    class="canva-tag inline-flex rounded-full border border-[#c9d8fb] bg-[#edf3ff] px-4 py-2 text-xs font-bold text-[#1649d8]"
-                                    style="background: rgb(237, 243, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;">Ready
-                                    for feedback</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </section>
-            <section id="philosophy" class="relative overflow-hidden bg-[#1649d8] py-20 sm:py-28">
-                <div class="absolute inset-0 grid-texture opacity-60" aria-hidden="true"></div>
-                <div class="relative mx-auto max-w-5xl px-5 text-center lg:px-8">
-                    <p data-template-id="philosophy-eyebrow"
-                        class="canva-text text-xs font-bold uppercase tracking-[.22em] text-[#2de5ff]"
-                        style="color: rgb(45, 229, 255); font-weight: 700; font-style: normal; font-size: 16px;">Design
-                        Philosophy</p>
-                    <h2 data-template-id="philosophy-statement"
-                        class="canva-text display-font mx-auto mt-6 max-w-4xl text-4xl font-extrabold leading-[1.08] tracking-[-.05em] text-white sm:text-6xl"
-                        style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 24px;">Clean
-                        design. Clear communication. Purposeful technology.</h2>
-                    <p data-template-id="philosophy-copy"
-                        class="canva-text mx-auto mt-8 max-w-3xl text-lg leading-8 text-[#e1eaff]"
-                        style="color: rgb(225, 234, 255); font-weight: 400; font-style: normal; font-size: 16px;">I
-                        believe great design is not only about how something looks, but also how clearly it
-                        communicates, how naturally it works and how effectively it serves its purpose.</p>
-                </div>
-            </section>
-            <section id="contact" class="blue-grid bg-[#f7f9ff] py-20 sm:py-24">
-                <div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[.88fr_1.12fr] lg:px-8">
-                    <div>
-                        <p data-template-id="contact-eyebrow"
-                            class="canva-text text-xs font-bold uppercase tracking-[.2em] text-[#1649d8]"
-                            style="color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;">
-                            Contact</p>
-                        <h2 data-template-id="contact-heading"
-                            class="canva-text display-font mt-4 text-4xl font-extrabold leading-tight tracking-[-.05em] text-[#07142f] sm:text-5xl"
-                            style="color: rgb(7, 20, 47); font-weight: 800; font-style: normal; font-size: 24px;">LET'S
-                            CREATE SOMETHING EXCEPTIONAL.</h2>
-                        <p data-template-id="contact-intro"
-                            class="canva-text mt-6 max-w-xl text-lg leading-8 text-[#52617d]"
-                            style="color: rgb(82, 97, 125); font-weight: 400; font-style: normal; font-size: 16px;">Have
-                            an idea, a design need, or a digital experience to shape? Reach out directly or send an
-                            inquiry below.</p>
-                        <address class="mt-10 not-italic">
-                            <div class="mb-6 flex items-start gap-3.5">
-                                <span
-                                    class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#25D366]/10">
-                                    <i class="fa-brands fa-whatsapp contact-icon-brand" style="color: #25D366;"
-                                        aria-hidden="true"></i>
-                                </span>
-                                <div>
-                                    <p data-template-id="contact-whatsapp-label"
-                                        class="canva-text text-xs font-bold uppercase tracking-[.14em] text-[#1649d8]"
-                                        style="color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;">
-                                        WhatsApp / Airtel</p><a data-template-id="contact-whatsapp"
-                                        class="canva-link contact-link mt-2 inline-flex text-base font-semibold text-[#07142f]"
-                                        href="https://wa.me/256701951404" target="_blank" rel="noopener noreferrer"
-                                        aria-label="Contact PHENY on WhatsApp"
-                                        style="color: rgb(7, 20, 47); font-weight: 600; font-style: normal; font-size: 16px;">+256
-                                        701 951404</a>
-                                </div>
-                            </div>
-                            <div class="mb-6 flex items-start gap-3.5">
-                                <span
-                                    class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#FFCC00]/10">
-                                    <i class="fa-solid fa-phone contact-icon-brand" style="color: #1649d8;"
-                                        aria-hidden="true"></i>
-                                </span>
-                                <div>
-                                    <p data-template-id="contact-mtn-label"
-                                        class="canva-text text-xs font-bold uppercase tracking-[.14em] text-[#1649d8]"
-                                        style="color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;">
-                                        MTN</p><a data-template-id="contact-mtn"
-                                        class="canva-link contact-link mt-2 inline-flex text-base font-semibold text-[#07142f]"
-                                        href="tel:+256763260974" aria-label="Call PHENY"
-                                        style="color: rgb(7, 20, 47); font-weight: 600; font-style: normal; font-size: 16px;">+256
-                                        763 260974</a>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3.5">
-                                <span
-                                    class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#1649d8]/10">
-                                    <i class="fa-solid fa-envelope contact-icon-brand" aria-hidden="true"></i>
-                                </span>
-                                <div>
-                                    <p data-template-id="contact-email-label"
-                                        class="canva-text text-xs font-bold uppercase tracking-[.14em] text-[#1649d8]"
-                                        style="color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;">
-                                        Email</p><a data-template-id="contact-email"
-                                        class="canva-link contact-link mt-2 inline-flex break-all text-base font-semibold text-[#07142f]"
-                                        href="mailto:wasswastephen24@gmail.com" aria-label="Email PHENY"
-                                        style="color: rgb(7, 20, 47); font-weight: 600; font-style: normal; font-size: 16px;">wasswastephen24@gmail.com</a>
-                                </div>
-                            </div>
-                        </address>
-                        <nav class="mt-10" aria-label="PHENY social profiles">
-                            <div class="flex flex-wrap gap-3">
-                                <a data-template-id="social-whatsapp"
-                                    class="canva-link social-pill inline-flex items-center gap-2.5 rounded-full border border-blue-100 bg-white px-5 py-2.5 text-sm font-bold text-[#1649d8]"
-                                    href="https://wa.me/256701951404" target="_blank" rel="noopener noreferrer"
-                                    aria-label="WhatsApp"
-                                    style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;"><i
-                                        class="fa-brands fa-whatsapp" aria-hidden="true"></i>WhatsApp</a>
-                                <a data-template-id="social-linkedin"
-                                    class="canva-link social-pill inline-flex items-center gap-2.5 rounded-full border border-blue-100 bg-white px-5 py-2.5 text-sm font-bold text-[#1649d8]"
-                                    href="https://linkedin.com/in/stephen-wasswa" target="_blank"
-                                    rel="noopener noreferrer" aria-label="LinkedIn profile"
-                                    style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;"><i
-                                        class="fa-brands fa-linkedin-in" aria-hidden="true"></i>LinkedIn</a>
-                                <a data-template-id="social-github"
-                                    class="canva-link social-pill inline-flex items-center gap-2.5 rounded-full border border-blue-100 bg-white px-5 py-2.5 text-sm font-bold text-[#1649d8]"
-                                    href="https://github.com/Wasswa-Phen" target="_blank" rel="noopener noreferrer"
-                                    aria-label="GitHub profile"
-                                    style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;"><i
-                                        class="fa-brands fa-github" aria-hidden="true"></i>GitHub</a>
-                                <a data-template-id="social-instagram"
-                                    class="canva-link social-pill inline-flex items-center gap-2.5 rounded-full border border-blue-100 bg-white px-5 py-2.5 text-sm font-bold text-[#1649d8]"
-                                    href="https://instagram.com/wasswa_phen" target="_blank" rel="noopener noreferrer"
-                                    aria-label="Instagram profile"
-                                    style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;"><i
-                                        class="fa-brands fa-instagram" aria-hidden="true"></i>Instagram</a>
-                                <a data-template-id="social-facebook"
-                                    class="canva-link social-pill inline-flex items-center gap-2.5 rounded-full border border-blue-100 bg-white px-5 py-2.5 text-sm font-bold text-[#1649d8]"
-                                    href="https://facebook.com/WasswaPhenDaniel" target="_blank"
-                                    rel="noopener noreferrer" aria-label="Facebook profile"
-                                    style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;"><i
-                                        class="fa-brands fa-facebook-f" aria-hidden="true"></i>Facebook</a>
-                            </div>
-                        </nav>
-                    </div>
-                    <div data-template-id="contact-form-panel"
-                        class="canva-panel rounded-3xl bg-white p-6 shadow-[0_18px_50px_rgba(21,51,120,.12)] sm:p-8"
-                        style="background: rgb(255, 255, 255);">
-                        <form id="inquiry-form" novalidate="">
-                            <div class="mb-5"><label data-template-id="form-name-label"
-                                    class="canva-text mb-2 block text-sm font-semibold text-[#07142f]"
-                                    for="inquiry-name"
-                                    style="color: rgb(7, 20, 47); font-weight: 600; font-style: normal; font-size: 16px;">Your
-                                    name</label> <input id="inquiry-name" name="name" type="text" required=""
-                                    autocomplete="name"
-                                    class="w-full rounded-xl border border-[#cfdaf3] bg-[#f9fbff] px-4 py-3.5 text-[#07142f] outline-none transition placeholder:text-[#7b89a5] focus:border-[#1649d8] focus:ring-2 focus:ring-[#2de5ff]">
-                            </div>
-                            <div class="mb-5"><label data-template-id="form-email-label"
-                                    class="canva-text mb-2 block text-sm font-semibold text-[#07142f]"
-                                    for="inquiry-email"
-                                    style="color: rgb(7, 20, 47); font-weight: 600; font-style: normal; font-size: 16px;">Your
-                                    email</label> <input id="inquiry-email" name="email" type="email" required=""
-                                    autocomplete="email"
-                                    class="w-full rounded-xl border border-[#cfdaf3] bg-[#f9fbff] px-4 py-3.5 text-[#07142f] outline-none transition placeholder:text-[#7b89a5] focus:border-[#1649d8] focus:ring-2 focus:ring-[#2de5ff]">
-                            </div>
-                            <div class="mb-6"><label data-template-id="form-message-label"
-                                    class="canva-text mb-2 block text-sm font-semibold text-[#07142f]"
-                                    for="inquiry-message"
-                                    style="color: rgb(7, 20, 47); font-weight: 600; font-style: normal; font-size: 16px;">Tell
-                                    me about your inquiry</label> <textarea id="inquiry-message" name="message" rows="5"
-                                    required=""
-                                    class="w-full resize-y rounded-xl border border-[#cfdaf3] bg-[#f9fbff] px-4 py-3.5 text-[#07142f] outline-none transition placeholder:text-[#7b89a5] focus:border-[#1649d8] focus:ring-2 focus:ring-[#2de5ff]"></textarea>
-                            </div><button id="submit-inquiry" type="submit"
-                                class="canva-button inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#1649d8] px-5 py-4 text-sm font-bold text-white transition hover:bg-[#0d36ae] disabled:cursor-wait disabled:opacity-65">
-                                <span data-template-id="form-submit-text" class="canva-text"
-                                    style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 16px;">Send
-                                    Inquiry</span><i data-lucide="send" class="h-4 w-4" aria-hidden="true"></i>
-                            </button>
-                            <p id="form-status" class="mt-4 min-h-6 text-sm font-medium" aria-live="polite"></p>
-                        </form>
+
+            <!-- =========================================================
+                 START A PROJECT CALL TO ACTION
+                 ========================================================= -->
+            <section id="start-project-cta" class="blue-grid bg-[#f7f9ff] py-20 sm:py-24">
+                <div class="mx-auto max-w-7xl px-5 lg:px-8 text-center anim-fade-up">
+                    <p class="canva-text text-xs font-bold uppercase tracking-[.2em] text-[#1649d8]"
+                        style="color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;">Start a Project</p>
+                    <h2 class="canva-text display-font mt-4 text-4xl font-extrabold tracking-[-.045em] text-[#07142f] sm:text-5xl"
+                        style="color: rgb(7, 20, 47); font-weight: 800; font-style: normal; font-size: 24px;">
+                        Let's create something exceptional.
+                    </h2>
+                    <p class="canva-text mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#52617d]">
+                        Have an idea, a design need, or a digital experience to shape? Submit a project brief with your requirements and estimated budget in UGX.
+                    </p>
+                    <div class="mt-9 flex flex-wrap items-center justify-center gap-4">
+                        <a href="start-project.html"
+                            class="canva-button inline-flex items-center gap-2 rounded-full bg-[#1649d8] px-8 py-4 text-base font-bold text-white shadow-md shadow-blue-600/20 transition hover:-translate-y-0.5 hover:bg-[#0d36ae]"
+                            style="background: rgb(22, 73, 216); color: rgb(255, 255, 255); font-weight: 700;">
+                            <span>Start a Project</span>
+                            <i data-lucide="arrow-right" class="h-4 w-4" aria-hidden="true"></i>
+                        </a>
+                        <a href="contact.html"
+                            class="canva-button inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-8 py-4 text-base font-bold text-[#07142f] transition hover:-translate-y-0.5 hover:border-blue-400">
+                            <span>Get in Touch</span>
+                            <i data-lucide="mail" class="h-4 w-4 text-[#1649d8]" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
             </section>
         </main>
+
         <!-- Floating Back to Top Button -->
         <button id="back-to-top" type="button" class="back-to-top-btn" aria-label="Back to top" title="Back to top">
             <i data-lucide="arrow-up" class="h-5 w-5" aria-hidden="true"></i>
@@ -1450,7 +1290,7 @@
                         class="canva-text display-font text-sm font-extrabold tracking-[.16em] text-white"
                         style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 16px;">PHENY</p>
                     <span class="text-white/20">•</span>
-                    <a href="#home" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#2de5ff] hover:text-white transition">
+                    <a href="#top" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#2de5ff] hover:text-white transition">
                         <span>Back to top</span>
                         <i data-lucide="arrow-up" class="h-3.5 w-3.5" aria-hidden="true"></i>
                     </a>
@@ -1495,157 +1335,6 @@
             </div>
         </footer>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            lucide.createIcons();
-
-            // Back to Top button logic
-            const backToTopBtn = document.getElementById("back-to-top");
-            if (backToTopBtn) {
-                const toggleBackToTop = () => {
-                    if (window.scrollY > 350) {
-                        backToTopBtn.classList.add("is-visible");
-                    } else {
-                        backToTopBtn.classList.remove("is-visible");
-                    }
-                };
-
-                window.addEventListener("scroll", toggleBackToTop, { passive: true });
-                toggleBackToTop();
-
-                backToTopBtn.addEventListener("click", () => {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: "smooth"
-                    });
-                });
-            }
-
-            const menuToggle = document.getElementById("menu-toggle");
-            const mobileMenu = document.getElementById("mobile-menu");
-            const menuClose = document.getElementById("menu-close");
-
-            function openMobileMenu() {
-                mobileMenu.classList.add("is-open");
-                menuToggle.setAttribute("aria-expanded", "true");
-                menuToggle.setAttribute("aria-label", "Close navigation menu");
-                document.body.style.overflow = "hidden";
-            }
-
-            function closeMobileMenu() {
-                mobileMenu.classList.remove("is-open");
-                menuToggle.setAttribute("aria-expanded", "false");
-                menuToggle.setAttribute("aria-label", "Open navigation menu");
-                document.body.style.overflow = "";
-            }
-
-            menuToggle.addEventListener("click", () => {
-                const isOpen = mobileMenu.classList.contains("is-open");
-                if (isOpen) {
-                    closeMobileMenu();
-                } else {
-                    openMobileMenu();
-                }
-            });
-
-            if (menuClose) {
-                menuClose.addEventListener("click", closeMobileMenu);
-            }
-
-            mobileMenu.querySelectorAll("a").forEach((link) => {
-                link.addEventListener("click", () => {
-                    closeMobileMenu();
-                });
-            });
-
-            document.addEventListener("keydown", (e) => {
-                if (e.key === "Escape" && mobileMenu.classList.contains("is-open")) {
-                    closeMobileMenu();
-                }
-            });
-
-            window.addEventListener("resize", () => {
-                if (window.innerWidth >= 1024 && mobileMenu.classList.contains("is-open")) {
-                    closeMobileMenu();
-                }
-            });
-
-            const form = document.getElementById("inquiry-form");
-            const submitButton = document.getElementById("submit-inquiry");
-            const submitText = submitButton ? submitButton.querySelector("span") : null;
-            const status = document.getElementById("form-status");
-
-            // Google Apps Script Web App URL for direct Gmail dispatch:
-            // Paste your deployed script URL here (e.g. "https://script.google.com/macros/s/.../exec")
-            const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyrB9bh0K9ZrwxAG4yKNEXuwapAk04Aa56mRMX_h6dCXZoP54LdEUwH1793dcue1Uw2/exec";
-
-            function setStatus(message, type) {
-                status.textContent = message;
-                let colorClass = "text-slate-600";
-                if (type === "success") colorClass = "text-emerald-700 font-semibold";
-                if (type === "error") colorClass = "text-red-700 font-semibold";
-                if (type === "info") colorClass = "text-blue-700";
-                status.className = "mt-4 min-h-6 text-sm transition-all " + colorClass;
-            }
-
-            form.addEventListener("submit", async (event) => {
-                event.preventDefault();
-
-                if (!form.checkValidity()) {
-                    form.reportValidity();
-                    return;
-                }
-
-                const formData = new FormData(form);
-                const name = (formData.get("name") || "").trim();
-                const email = (formData.get("email") || "").trim();
-                const message = (formData.get("message") || "").trim();
-
-                // If Google Apps Script URL is not yet configured, provide a safe fallback to mailto
-                if (!GOOGLE_SCRIPT_URL) {
-                    const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
-                    const body = encodeURIComponent(`Hello Stephen,\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n`);
-                    const mailtoUrl = `mailto:wasswastephen24@gmail.com?subject=${subject}&body=${body}`;
-
-                    setStatus("Opening your email client... You can also reach Stephen directly on WhatsApp at +256 701 951404.", "info");
-                    window.location.href = mailtoUrl;
-                    return;
-                }
-
-                // Loading state
-                submitButton.disabled = true;
-                const originalText = submitText ? submitText.textContent : "Send Inquiry";
-                if (submitText) submitText.textContent = "Sending...";
-                setStatus("Sending your message directly to Stephen...", "info");
-
-                try {
-                    // Send payload using text/plain in no-cors mode to ensure Google Apps Script redirects without CORS block
-                    await fetch(GOOGLE_SCRIPT_URL, {
-                        method: "POST",
-                        mode: "no-cors",
-                        headers: {
-                            "Content-Type": "text/plain;charset=utf-8"
-                        },
-                        body: JSON.stringify({
-                            name: name,
-                            email: email,
-                            message: message,
-                            timestamp: new Date().toISOString()
-                        })
-                    });
-
-                    setStatus("Thank you! Your message has been sent directly to Stephen's Gmail. He will reply shortly.", "success");
-                    form.reset();
-                } catch (err) {
-                    setStatus("Unable to send message automatically. Please reach Stephen directly on WhatsApp at +256 701 951404 or wasswastephen24@gmail.com.", "error");
-                } finally {
-                    submitButton.disabled = false;
-                    if (submitText) submitText.textContent = originalText;
-                }
-            });
-        });
-    </script>
-
 </body>
 
 </html>
