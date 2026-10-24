@@ -991,14 +991,23 @@
 
             const form = document.getElementById("inquiry-form");
             const submitButton = document.getElementById("submit-inquiry");
+            const submitText = submitButton ? submitButton.querySelector("span") : null;
             const status = document.getElementById("form-status");
 
-            function setStatus(message, success) {
+            // Google Apps Script Web App URL for direct Gmail dispatch:
+            // Paste your deployed script URL here (e.g. "https://script.google.com/macros/s/.../exec")
+            const GOOGLE_SCRIPT_URL = "";
+
+            function setStatus(message, type) {
                 status.textContent = message;
-                status.className = "mt-4 min-h-6 text-sm font-medium " + (success ? "text-emerald-700" : "text-red-700");
+                let colorClass = "text-slate-600";
+                if (type === "success") colorClass = "text-emerald-700 font-semibold";
+                if (type === "error") colorClass = "text-red-700 font-semibold";
+                if (type === "info") colorClass = "text-blue-700";
+                status.className = "mt-4 min-h-6 text-sm transition-all " + colorClass;
             }
 
-            form.addEventListener("submit", (event) => {
+            form.addEventListener("submit", async (event) => {
                 event.preventDefault();
 
                 if (!form.checkValidity()) {
@@ -1011,14 +1020,47 @@
                 const email = (formData.get("email") || "").trim();
                 const message = (formData.get("message") || "").trim();
 
-                const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
-                const body = encodeURIComponent(`Hello Stephen,\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n`);
-                const mailtoUrl = `mailto:wasswastephen24@gmail.com?subject=${subject}&body=${body}`;
+                // If Google Apps Script URL is not yet configured, provide a safe fallback to mailto
+                if (!GOOGLE_SCRIPT_URL) {
+                    const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+                    const body = encodeURIComponent(`Hello Stephen,\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n`);
+                    const mailtoUrl = `mailto:wasswastephen24@gmail.com?subject=${subject}&body=${body}`;
 
-                setStatus("Opening your email client... You can also reach Stephen directly on WhatsApp at +256 701 951404.", true);
+                    setStatus("Opening your email client... You can also reach Stephen directly on WhatsApp at +256 701 951404.", "info");
+                    window.location.href = mailtoUrl;
+                    return;
+                }
 
-                window.location.href = mailtoUrl;
-                form.reset();
+                // Loading state
+                submitButton.disabled = true;
+                const originalText = submitText ? submitText.textContent : "Send Inquiry";
+                if (submitText) submitText.textContent = "Sending...";
+                setStatus("Sending your message directly to Stephen...", "info");
+
+                try {
+                    // Send payload using text/plain in no-cors mode to ensure Google Apps Script redirects without CORS block
+                    await fetch(GOOGLE_SCRIPT_URL, {
+                        method: "POST",
+                        mode: "no-cors",
+                        headers: {
+                            "Content-Type": "text/plain;charset=utf-8"
+                        },
+                        body: JSON.stringify({
+                            name: name,
+                            email: email,
+                            message: message,
+                            timestamp: new Date().toISOString()
+                        })
+                    });
+
+                    setStatus("Thank you! Your message has been sent directly to Stephen's Gmail. He will reply shortly.", "success");
+                    form.reset();
+                } catch (err) {
+                    setStatus("Unable to send message automatically. Please reach Stephen directly on WhatsApp at +256 701 951404 or wasswastephen24@gmail.com.", "error");
+                } finally {
+                    submitButton.disabled = false;
+                    if (submitText) submitText.textContent = originalText;
+                }
             });
         });
     </script>
