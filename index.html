@@ -4,36 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wasswa Makubuya Stephen (Pheny) — Designer Portfolio</title>
-    <meta name="description" content="Portfolio of Wasswa Makubuya Stephen (Pheny) — Creative Technologist, Graphics, Web & UI/UX Designer based in Kampala, Uganda.">
-    <meta name="keywords" content="Wasswa Stephen, Pheny, Portfolio, Graphics Designer, Web Designer, UI/UX Designer, Software Engineering, Uganda">
-    <meta name="author" content="Wasswa Makubuya Stephen">
-    <meta name="theme-color" content="#07142f">
+    <title>Wasswa Stephen (PHENY) — Creative Technologist &amp; Designer</title>
+    <meta name="description"
+        content="Portfolio of Wasswa Stephen (PHENY) — Creative Technologist working across Graphic Design, Web Development, UI/UX, and Software Engineering in Kampala, Uganda.">
+    <meta name="keywords"
+        content="Wasswa Stephen, Pheny, Creative Technologist, UI/UX Designer, Web Developer, Graphic Designer, Software Engineering, Kampala Uganda">
+    <meta name="author" content="Wasswa Stephen">
+    <meta name="theme-color" content="#060c19">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://wasswa-phen.github.io/Wasswa-Phen/">
-    <meta property="og:title" content="Wasswa Makubuya Stephen (Pheny) — Designer Portfolio">
-    <meta property="og:description" content="Creative digital experiences engineered with clarity, purpose and excellence.">
+    <meta property="og:title" content="Wasswa Stephen (PHENY) — Creative Technologist &amp; Designer">
+    <meta property="og:description"
+        content="Turning ideas into thoughtful digital experiences through design, technology, and purposeful problem-solving.">
     <meta property="og:image" content="https://wasswa-phen.github.io/Wasswa-Phen/Wasswa%20Stephen.png">
 
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wasswa Stephen (PHENY) — Creative Technologist &amp; Designer">
+    <meta name="twitter:description"
+        content="Turning ideas into thoughtful digital experiences through design, technology, and purposeful problem-solving.">
+    <meta name="twitter:image" content="https://wasswa-phen.github.io/Wasswa-Phen/Wasswa%20Stephen.png">
+
     <!-- Favicons & Manifest -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="icon" type="image/png" href="Wasswa Stephen.png">
     <link rel="manifest" href="site.webmanifest">
+
+    <!-- Google Fonts Preconnect & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@400;500;600;700;800&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet">
+
     <style>
+        /* ================================================================
+           PHENY DESIGN SYSTEM — Digital Craft in Motion
+           ================================================================ */
         :root {
+            --navy-deep: #060c19;
             --navy: #07142f;
             --navy-soft: #0b1d44;
             --blue: #1649d8;
+            --blue-bright: #2563eb;
             --cyan: #2de5ff;
+            --cyan-glow: rgba(45, 229, 255, 0.4);
             --mist: #edf3ff;
             --ink: #101b33;
+            --text-muted: #9ab0d6;
         }
 
         html {
@@ -45,7 +64,9 @@
             width: 100%;
             font-family: "Inter", sans-serif;
             color: var(--ink);
+            background: #060c19;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
         h1,
@@ -53,41 +74,533 @@
         h3,
         .display-font {
             font-family: "Outfit", sans-serif;
+            letter-spacing: -0.03em;
         }
 
         .site-shell {
             width: 100%;
             position: relative;
-            overflow: hidden;
-            background: #f7f9ff;
+            overflow-x: hidden;
+            background: #060c19;
         }
 
-        .grid-texture {
-            background-image:
-                linear-gradient(rgba(255, 255, 255, .075) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, .075) 1px, transparent 1px);
-            background-size: 38px 38px;
+        /* -------------------------------------------------------------
+           Header & Navigation
+           ------------------------------------------------------------- */
+        .site-header {
+            transition: background-color 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
         }
 
-        .blue-grid {
-            background-image:
-                linear-gradient(rgba(22, 73, 216, .07) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(22, 73, 216, .07) 1px, transparent 1px);
-            background-size: 34px 34px;
-        }
-
-        .nav-link {
-            color: #33415f;
-            font-size: .78rem;
+        .nav-item {
+            color: #b0c3e6;
+            font-size: 0.8rem;
             font-weight: 700;
-            letter-spacing: .05em;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            transition: color .2s ease;
+            position: relative;
+            padding: 0.4rem 0;
+            transition: color 0.25s ease;
         }
 
-        .nav-link:hover,
-        .nav-link:focus-visible {
-            color: var(--blue);
+        .nav-item:hover,
+        .nav-item:focus-visible {
+            color: #ffffff;
+        }
+
+        .nav-item::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2de5ff;
+            box-shadow: 0 0 10px #2de5ff;
+            transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-item:hover::after,
+        .nav-item:focus-visible::after {
+            width: 100%;
+        }
+
+        .nav-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.62rem 1.35rem;
+            border-radius: 9999px;
+            background: #1649d8;
+            color: #ffffff !important;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border: 1px solid rgba(45, 229, 255, 0.35);
+            box-shadow: 0 4px 18px rgba(22, 73, 216, 0.35);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-cta-btn:hover {
+            background: #2de5ff;
+            color: #060c19 !important;
+            border-color: #2de5ff;
+            box-shadow: 0 6px 24px rgba(45, 229, 255, 0.45);
+            transform: translateY(-1px);
+        }
+
+        /* -------------------------------------------------------------
+           Hero Section & Background System
+           ------------------------------------------------------------- */
+        .hero-section {
+            background: radial-gradient(circle at 75% 35%, #0c1c42 0%, #060c19 70%);
+            position: relative;
+            min-height: calc(100vh - 72px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg-system {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .hero-grid-canvas {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(45, 229, 255, 0.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(45, 229, 255, 0.045) 1px, transparent 1px);
+            background-size: 38px 38px;
+            mask-image: radial-gradient(ellipse 80% 65% at 50% 45%, black 20%, transparent 80%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 65% at 50% 45%, black 20%, transparent 80%);
+        }
+
+        .hero-radial-glow {
+            position: absolute;
+            top: 10%;
+            right: 0%;
+            width: clamp(350px, 45vw, 680px);
+            height: clamp(350px, 45vw, 680px);
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(45, 229, 255, 0.16) 0%, rgba(22, 73, 216, 0.22) 42%, transparent 72%);
+            filter: blur(50px);
+            transform: translateZ(0);
+        }
+
+        .hero-ambient-left {
+            position: absolute;
+            top: -15%;
+            left: -15%;
+            width: clamp(300px, 35vw, 520px);
+            height: clamp(300px, 35vw, 520px);
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(22, 73, 216, 0.16) 0%, transparent 70%);
+            filter: blur(60px);
+            transform: translateZ(0);
+        }
+
+        .hero-tech-line {
+            position: absolute;
+            top: 60%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 5%, rgba(45, 229, 255, 0.06) 25%, rgba(45, 229, 255, 0.18) 50%, rgba(45, 229, 255, 0.06) 75%, transparent 95%);
+        }
+
+        /* -------------------------------------------------------------
+           Hero Typography (Responsive Clamp System)
+           ------------------------------------------------------------- */
+        .hero-headline {
+            font-size: clamp(2.75rem, 8vw, 6.5rem);
+            line-height: 0.92;
+            letter-spacing: -0.04em;
+        }
+
+        .text-gradient-hero {
+            background: linear-gradient(180deg, #ffffff 30%, #d4e2ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* -------------------------------------------------------------
+           Portrait Stage & Architectural Frame
+           ------------------------------------------------------------- */
+        .hero-portrait-stage {
+            position: relative;
+            width: 100%;
+            max-width: 470px;
+            margin: 0 auto;
+        }
+
+        .portrait-ambient-glow {
+            position: absolute;
+            inset: -15px;
+            border-radius: 2.2rem 2.2rem 1.6rem 1.6rem;
+            background: radial-gradient(circle at 50% 35%, rgba(45, 229, 255, 0.22) 0%, rgba(22, 73, 216, 0.28) 50%, transparent 75%);
+            filter: blur(28px);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .portrait-viewport {
+            position: relative;
+            z-index: 2;
+            aspect-ratio: 4 / 4.75;
+            border-radius: 2rem 2rem 1.5rem 1.5rem;
+            overflow: hidden;
+            background: linear-gradient(160deg, #122b6d 0%, #060c19 100%);
+            border: 1px solid rgba(45, 229, 255, 0.32);
+            box-shadow:
+                0 25px 60px -15px rgba(0, 0, 0, 0.85),
+                0 0 35px -5px rgba(45, 229, 255, 0.2);
+        }
+
+        .portrait-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 12%;
+            filter: contrast(1.04) saturate(1.05);
+            display: block;
+        }
+
+        .portrait-vignette {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 55%, rgba(6, 12, 25, 0.82) 88%, #060c19 100%);
+            pointer-events: none;
+        }
+
+        .frame-tag {
+            position: absolute;
+            z-index: 3;
+            font-family: monospace;
+            font-size: 14px;
+            font-weight: 700;
+            color: rgba(45, 229, 255, 0.6);
+            pointer-events: none;
+            line-height: 1;
+        }
+
+        .frame-tag-tl {
+            top: 14px;
+            left: 16px;
+        }
+
+        .frame-tag-tr {
+            top: 14px;
+            right: 16px;
+        }
+
+        /* Floating Status Card */
+        .portrait-status-pill {
+            position: absolute;
+            bottom: -16px;
+            left: -10px;
+            z-index: 4;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.15rem;
+            border-radius: 1.15rem;
+            background: rgba(7, 20, 47, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(45, 229, 255, 0.35);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 20px rgba(45, 229, 255, 0.15);
+        }
+
+        .status-pulse-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 9999px;
+            background: #2de5ff;
+            box-shadow: 0 0 10px #2de5ff;
+            flex-shrink: 0;
+            animation: statusPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        .status-pill-title {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.02em;
+        }
+
+        .status-pill-sub {
+            display: block;
+            font-size: 0.68rem;
+            font-weight: 500;
+            color: #8fa6d0;
+        }
+
+        .portrait-index-tag {
+            position: absolute;
+            top: 18px;
+            right: -10px;
+            z-index: 4;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.4rem 0.85rem;
+            border-radius: 9999px;
+            background: rgba(6, 12, 25, 0.9);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(45, 229, 255, 0.28);
+            font-family: monospace;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: #2de5ff;
+        }
+
+        /* -------------------------------------------------------------
+           Hero Action Buttons & Scroll Indicator
+           ------------------------------------------------------------- */
+        .hero-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 0.95rem 1.85rem;
+            border-radius: 9999px;
+            background: #2de5ff;
+            color: #060c19 !important;
+            font-size: 0.82rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            box-shadow: 0 0 30px rgba(45, 229, 255, 0.35);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .hero-btn-primary:hover {
+            transform: translateY(-2px);
+            background: #ffffff;
+            box-shadow: 0 0 45px rgba(45, 229, 255, 0.55);
+            color: #060c19 !important;
+        }
+
+        .hero-btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 0.95rem 1.85rem;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.04);
+            color: #ffffff !important;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(8px);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .hero-btn-secondary:hover {
+            transform: translateY(-2px);
+            border-color: #2de5ff;
+            color: #2de5ff !important;
+            background: rgba(45, 229, 255, 0.08);
+        }
+
+        .hero-scroll-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #8ea4cc;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            transition: color 0.25s ease;
+        }
+
+        .hero-scroll-link:hover {
+            color: #2de5ff;
+        }
+
+        .scroll-track {
+            width: 20px;
+            height: 32px;
+            border-radius: 9999px;
+            border: 2px solid rgba(142, 164, 204, 0.45);
+            display: flex;
+            justify-content: center;
+            padding-top: 5px;
+            transition: border-color 0.25s ease;
+        }
+
+        .hero-scroll-link:hover .scroll-track {
+            border-color: #2de5ff;
+        }
+
+        .scroll-thumb {
+            width: 3px;
+            height: 6px;
+            border-radius: 9999px;
+            background: #2de5ff;
+            box-shadow: 0 0 6px #2de5ff;
+            animation: floatBob 1.6s ease-in-out infinite;
+        }
+
+        /* -------------------------------------------------------------
+           Keyframe Animations
+           ------------------------------------------------------------- */
+        @keyframes heroFadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(22px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heroPortraitEntry {
+            from {
+                opacity: 0;
+                transform: translateY(26px) scale(0.97);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes statusPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+                box-shadow: 0 0 0 0 rgba(45, 229, 255, 0.7);
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.85;
+                box-shadow: 0 0 0 6px rgba(45, 229, 255, 0);
+            }
+        }
+
+        @keyframes floatBob {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(6px);
+            }
+        }
+
+        .anim-load {
+            opacity: 0;
+            animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .anim-delay-kicker {
+            animation-delay: 0.08s;
+        }
+
+        .anim-delay-title-1 {
+            animation-delay: 0.2s;
+        }
+
+        .anim-delay-title-2 {
+            animation-delay: 0.32s;
+        }
+
+        .anim-delay-identity {
+            animation-delay: 0.44s;
+        }
+
+        .anim-delay-statement {
+            animation-delay: 0.56s;
+        }
+
+        .anim-delay-actions {
+            animation-delay: 0.68s;
+        }
+
+        .anim-delay-meta {
+            animation-delay: 0.8s;
+        }
+
+        .anim-delay-scroll {
+            animation-delay: 0.92s;
+        }
+
+        .anim-portrait {
+            opacity: 0;
+            animation: heroPortraitEntry 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+        }
+
+        /* -------------------------------------------------------------
+           Shared Components & Card Refinements
+           ------------------------------------------------------------- */
+        .service-card,
+        .project-card,
+        .testimonial-card {
+            border: 1px solid #dce5fa;
+            background: rgba(255, 255, 255, 0.96);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .service-card:hover,
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #2de5ff;
+            box-shadow: 0 18px 36px rgba(22, 73, 216, 0.14);
+        }
+
+        .social-pill {
+            transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .social-pill:hover {
+            transform: translateY(-3px);
+            background: #1649d8;
+            color: white !important;
+            box-shadow: 0 8px 20px rgba(22, 73, 216, 0.25);
+        }
+
+        .social-pill .fa-brands,
+        .social-pill .fa-solid {
+            font-size: 1.05rem;
+            transition: transform 0.2s ease;
+        }
+
+        .social-pill:hover .fa-brands,
+        .social-pill:hover .fa-solid {
+            transform: scale(1.15);
+        }
+
+        .contact-link {
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .contact-link:hover {
+            color: var(--blue) !important;
+            transform: translateX(3px);
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--cyan);
+            outline-offset: 4px;
         }
 
         .menu-panel {
@@ -101,7 +614,7 @@
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
-            transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
+            transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
             transform: scale(0.98) translateY(-6px);
             display: flex;
             flex-direction: column;
@@ -121,241 +634,94 @@
             }
         }
 
-        .hero-orbit {
-            position: absolute;
-            inset: 9% -5% -14% 17%;
-            border: 1px solid rgba(45, 229, 255, .45);
-            border-radius: 50%;
-            transform: rotate(-16deg);
-        }
+        /* -------------------------------------------------------------
+           Motion Accessibility (prefers-reduced-motion)
+           ------------------------------------------------------------- */
+        @media (prefers-reduced-motion: reduce) {
 
-        .portrait-frame {
-            position: relative;
-            isolation: isolate;
-            min-height: 410px;
-            overflow: hidden;
-            border-radius: 2rem 2rem 2rem .35rem;
-            background: linear-gradient(145deg, #2462ec, #0a2157);
-            box-shadow: 22px 24px 0 rgba(45, 229, 255, .16);
-        }
-
-        .portrait-frame::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            z-index: 1;
-            background: linear-gradient(180deg, transparent 48%, rgba(5, 16, 47, .56) 100%);
-            pointer-events: none;
-        }
-
-        .portrait-frame img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center top;
-            filter: saturate(1.05) contrast(1.02);
-        }
-
-        .service-card,
-        .project-card,
-        .testimonial-card {
-            border: 1px solid #dce5fa;
-            background: rgba(255, 255, 255, .94);
-            transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
-        }
-
-        .service-card:hover,
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: #2de5ff;
-            box-shadow: 0 17px 32px rgba(22, 73, 216, .13);
-        }
-
-        .browser-window {
-            overflow: hidden;
-            border: 1px solid rgba(45, 229, 255, .35);
-            border-radius: 1.35rem;
-            background: #07142f;
-            box-shadow: 0 20px 42px rgba(0, 0, 0, .22);
-        }
-
-        .browser-bar {
-            display: flex;
-            align-items: center;
-            gap: .55rem;
-            padding: .9rem 1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, .12);
-        }
-
-        .browser-dot {
-            width: .58rem;
-            height: .58rem;
-            border-radius: 999px;
-            background: #7f91ba;
-        }
-
-        .browser-address {
-            margin-left: .35rem;
-            min-width: 0;
-            flex: 1;
-            border-radius: .6rem;
-            background: rgba(255, 255, 255, .1);
-            padding: .48rem .7rem;
-            color: #dce7ff;
-            font-size: .73rem;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-
-        .preview-grid {
-            background-image:
-                linear-gradient(rgba(45, 229, 255, .09) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(45, 229, 255, .09) 1px, transparent 1px);
-            background-size: 24px 24px;
-        }
-
-        .project-url {
-            word-break: break-all;
-            color: #2de5ff;
-        }
-
-        .social-pill {
-            transition: transform .2s ease, background-color .2s ease, color .2s ease, box-shadow .2s ease;
-        }
-
-        .social-pill:hover {
-            transform: translateY(-3px);
-            background: #1649d8;
-            color: white;
-            box-shadow: 0 8px 20px rgba(22, 73, 216, .25);
-        }
-
-        .social-pill .fa-brands,
-        .social-pill .fa-solid {
-            font-size: 1.05rem;
-            transition: transform .2s ease;
-        }
-
-        .social-pill:hover .fa-brands,
-        .social-pill:hover .fa-solid {
-            transform: scale(1.15);
-        }
-
-        .footer-social-link .fa-brands,
-        .footer-social-link .fa-solid {
-            font-size: .85rem;
-            transition: transform .2s ease;
-        }
-
-        .footer-social-link:hover .fa-brands,
-        .footer-social-link:hover .fa-solid {
-            transform: scale(1.2);
-        }
-
-        .contact-icon-brand {
-            font-size: 1.15rem;
-            color: #1649d8;
-            transition: transform .2s ease;
-        }
-
-        .contact-link {
-            transition: color .2s ease, transform .2s ease;
-        }
-
-        .contact-link:hover {
-            color: var(--blue);
-            transform: translateX(3px);
-        }
-
-        .reveal {
-            animation: rise .7s both;
-        }
-
-        .delay-1 {
-            animation-delay: .12s;
-        }
-
-        .delay-2 {
-            animation-delay: .22s;
-        }
-
-        .delay-3 {
-            animation-delay: .34s;
-        }
-
-        @keyframes rise {
-            from {
-                opacity: 0;
-                transform: translateY(18px);
+            *,
+            ::before,
+            ::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
             }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            .anim-load,
+            .anim-portrait {
+                opacity: 1 !important;
+                transform: none !important;
             }
         }
 
-        :focus-visible {
-            outline: 3px solid var(--cyan);
-            outline-offset: 4px;
-        }
-
+        /* Mobile Adjustments */
         @media (max-width: 767px) {
-            .portrait-frame {
-                min-height: 360px;
-                border-radius: 1.5rem 1.5rem 1.5rem .25rem;
+            .hero-portrait-stage {
+                max-width: 360px;
+                margin-top: 1rem;
+            }
+
+            .portrait-viewport {
+                border-radius: 1.5rem 1.5rem 1.25rem 1.25rem;
+            }
+
+            .portrait-status-pill {
+                bottom: -10px;
+                left: 0;
+                padding: 0.6rem 0.9rem;
+            }
+
+            .hero-btn-primary,
+            .hero-btn-secondary {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
     <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
 </head>
 
-<body data-template-id="__page-root" style="background: rgb(247, 249, 255);">
+<body data-template-id="__page-root">
     <div class="site-shell">
-        <header class="sticky top-0 z-50 border-b border-blue-100 bg-white/95 backdrop-blur"
+        <!-- Modern Glassmorphism Header -->
+        <header class="site-header sticky top-0 z-50 border-b border-white/10 bg-[#060c19]/90 backdrop-blur-md"
             aria-label="Primary navigation">
-            <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8"><a href="#home"
-                    class="flex items-center gap-3 rounded-sm" aria-label="PHENY home"> <span
-                        class="flex h-10 w-10 items-center justify-center rounded-xl bg-[#1649d8] font-bold text-white">P</span>
-                    <span data-template-id="nav-brand"
-                        class="canva-text display-font text-base font-extrabold tracking-[0.16em] text-[#07142f]"
-                        style="color: rgb(7, 20, 47); font-weight: 800; font-style: normal; font-size: 16px;">PHENY</span>
+            <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+                <a href="#home" class="brand-link flex items-center gap-3 group" aria-label="PHENY home">
+                    <span
+                        class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#1649d8] to-[#09226b] font-bold text-white shadow-md shadow-blue-900/40 border border-blue-400/30 transition group-hover:scale-105 group-hover:border-[#2de5ff]/60">P</span>
+                    <span
+                        class="display-font text-base font-extrabold tracking-[0.18em] text-white transition group-hover:text-[#2de5ff]">PHENY</span>
                 </a>
-                <div class="hidden items-center gap-6 lg:flex"><a data-template-id="nav-home"
-                        class="canva-link nav-link" href="#home"
-                        style="color: rgb(51, 65, 95); font-weight: 600; font-style: normal; font-size: 16px;">Home</a>
-                    <a data-template-id="nav-about" class="canva-link nav-link" href="#about"
-                        style="color: rgb(51, 65, 95); font-weight: 600; font-style: normal; font-size: 16px;">About</a>
-                    <a data-template-id="nav-services" class="canva-link nav-link" href="#services"
-                        style="color: rgb(51, 65, 95); font-weight: 600; font-style: normal; font-size: 16px;">Services</a>
-                    <a data-template-id="nav-work" class="canva-link nav-link" href="#work"
-                        style="color: rgb(51, 65, 95); font-weight: 600; font-style: normal; font-size: 16px;">Work</a>
-                    <a data-template-id="nav-philosophy" class="canva-link nav-link" href="#philosophy"
-                        style="color: rgb(51, 65, 95); font-weight: 600; font-style: normal; font-size: 16px;">Philosophy</a>
-                    <a data-template-id="nav-contact" class="canva-link nav-link" href="#contact"
-                        style="color: rgb(51, 65, 95); font-weight: 600; font-style: normal; font-size: 16px;">Contact</a>
-                    <a data-template-id="nav-contact-cta"
-                        class="canva-button rounded-full bg-[#1649d8] px-5 py-3 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-[#0d36ae]"
-                        href="#contact"
-                        style="background: rgb(22, 73, 216); color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 16px;">Contact
-                        Me</a>
-                </div><button id="menu-toggle" type="button" class="rounded-lg p-2 text-[#07142f] lg:hidden"
-                    aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu"> <i
-                        data-lucide="menu" aria-hidden="true"></i> </button>
+                <div class="hidden items-center gap-7 lg:flex">
+                    <a class="nav-item" href="#home">Home</a>
+                    <a class="nav-item" href="#about">About</a>
+                    <a class="nav-item" href="#services">Services</a>
+                    <a class="nav-item" href="#work">Work</a>
+                    <a class="nav-item" href="#philosophy">Philosophy</a>
+                    <a class="nav-item" href="#contact">Contact</a>
+                    <a class="nav-cta-btn" href="#contact">Let's Connect</a>
+                </div>
+                <button id="menu-toggle" type="button"
+                    class="rounded-xl p-2.5 text-white/90 hover:text-white hover:bg-white/10 transition lg:hidden"
+                    aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <i data-lucide="menu" aria-hidden="true" class="w-6 h-6"></i>
+                </button>
             </nav>
         </header>
-        <div id="mobile-menu" class="menu-panel lg:hidden" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+
+        <!-- Mobile Navigation Menu Drawer -->
+        <div id="mobile-menu" class="menu-panel lg:hidden" role="dialog" aria-modal="true"
+            aria-label="Mobile navigation">
             <div class="flex items-center justify-between border-b border-blue-100/80 px-5 py-4 bg-white shrink-0">
                 <a href="#home" class="flex items-center gap-3 rounded-sm" aria-label="PHENY home">
-                    <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-[#1649d8] font-bold text-white shadow-sm">P</span>
-                    <span data-template-id="nav-brand-mobile"
-                        class="canva-text display-font text-base font-extrabold tracking-[0.16em] text-[#07142f]"
-                        style="color: rgb(7, 20, 47); font-weight: 800; font-style: normal; font-size: 16px;">PHENY</span>
+                    <span
+                        class="flex h-10 w-10 items-center justify-center rounded-xl bg-[#1649d8] font-bold text-white shadow-sm">P</span>
+                    <span class="display-font text-base font-extrabold tracking-[0.16em] text-[#07142f]">PHENY</span>
                 </a>
                 <button id="menu-close" type="button"
                     class="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-100 text-[#07142f] hover:bg-blue-50 hover:border-blue-200 active:scale-95 transition"
@@ -365,73 +731,71 @@
             </div>
             <div class="flex-1 overflow-y-auto overscroll-contain px-5 py-5 flex flex-col justify-between">
                 <nav class="flex flex-col gap-1.5" aria-label="Mobile navigation links">
-                    <a data-template-id="mobile-nav-home"
-                        class="canva-link group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] transition hover:bg-blue-50/80 active:bg-blue-100/60"
-                        href="#home"
-                        style="color: rgb(7, 20, 47); font-weight: 600; font-style: normal; font-size: 18px;">
+                    <a class="group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] transition hover:bg-blue-50/80 active:bg-blue-100/60"
+                        href="#home">
                         <span class="flex items-center gap-3.5">
-                            <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-[#1649d8] group-hover:bg-[#1649d8] group-hover:text-white transition">01</span>
+                            <span
+                                class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-[#1649d8] group-hover:bg-[#1649d8] group-hover:text-white transition">01</span>
                             <span class="display-font text-xl font-bold tracking-tight">Home</span>
                         </span>
-                        <i data-lucide="chevron-right" class="h-5 w-5 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-[#1649d8]"></i>
+                        <i data-lucide="chevron-right"
+                            class="h-5 w-5 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-[#1649d8]"></i>
                     </a>
-                    <a data-template-id="mobile-nav-about"
-                        class="canva-link group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] transition hover:bg-blue-50/80 active:bg-blue-100/60"
-                        href="#about"
-                        style="color: rgb(7, 20, 47); font-weight: 600; font-style: normal; font-size: 18px;">
+                    <a class="group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] transition hover:bg-blue-50/80 active:bg-blue-100/60"
+                        href="#about">
                         <span class="flex items-center gap-3.5">
-                            <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-[#1649d8] group-hover:bg-[#1649d8] group-hover:text-white transition">02</span>
+                            <span
+                                class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-[#1649d8] group-hover:bg-[#1649d8] group-hover:text-white transition">02</span>
                             <span class="display-font text-xl font-bold tracking-tight">About</span>
                         </span>
-                        <i data-lucide="chevron-right" class="h-5 w-5 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-[#1649d8]"></i>
+                        <i data-lucide="chevron-right"
+                            class="h-5 w-5 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-[#1649d8]"></i>
                     </a>
-                    <a data-template-id="mobile-nav-services"
-                        class="canva-link group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] transition hover:bg-blue-50/80 active:bg-blue-100/60"
-                        href="#services"
-                        style="color: rgb(7, 20, 47); font-weight: 600; font-style: normal; font-size: 18px;">
+                    <a class="group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] transition hover:bg-blue-50/80 active:bg-blue-100/60"
+                        href="#services">
                         <span class="flex items-center gap-3.5">
-                            <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-[#1649d8] group-hover:bg-[#1649d8] group-hover:text-white transition">03</span>
+                            <span
+                                class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-[#1649d8] group-hover:bg-[#1649d8] group-hover:text-white transition">03</span>
                             <span class="display-font text-xl font-bold tracking-tight">Services</span>
                         </span>
-                        <i data-lucide="chevron-right" class="h-5 w-5 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-[#1649d8]"></i>
+                        <i data-lucide="chevron-right"
+                            class="h-5 w-5 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-[#1649d8]"></i>
                     </a>
-                    <a data-template-id="mobile-nav-work"
-                        class="canva-link group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] transition hover:bg-blue-50/80 active:bg-blue-100/60"
-                        href="#work"
-                        style="color: rgb(7, 20, 47); font-weight: 600; font-style: normal; font-size: 18px;">
+                    <a class="group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] transition hover:bg-blue-50/80 active:bg-blue-100/60"
+                        href="#work">
                         <span class="flex items-center gap-3.5">
-                            <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-[#1649d8] group-hover:bg-[#1649d8] group-hover:text-white transition">04</span>
+                            <span
+                                class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-[#1649d8] group-hover:bg-[#1649d8] group-hover:text-white transition">04</span>
                             <span class="display-font text-xl font-bold tracking-tight">Work</span>
                         </span>
-                        <i data-lucide="chevron-right" class="h-5 w-5 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-[#1649d8]"></i>
+                        <i data-lucide="chevron-right"
+                            class="h-5 w-5 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-[#1649d8]"></i>
                     </a>
-                    <a data-template-id="mobile-nav-philosophy"
-                        class="canva-link group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] transition hover:bg-blue-50/80 active:bg-blue-100/60"
-                        href="#philosophy"
-                        style="color: rgb(7, 20, 47); font-weight: 600; font-style: normal; font-size: 18px;">
+                    <a class="group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] transition hover:bg-blue-50/80 active:bg-blue-100/60"
+                        href="#philosophy">
                         <span class="flex items-center gap-3.5">
-                            <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-[#1649d8] group-hover:bg-[#1649d8] group-hover:text-white transition">05</span>
+                            <span
+                                class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-[#1649d8] group-hover:bg-[#1649d8] group-hover:text-white transition">05</span>
                             <span class="display-font text-xl font-bold tracking-tight">Philosophy</span>
                         </span>
-                        <i data-lucide="chevron-right" class="h-5 w-5 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-[#1649d8]"></i>
+                        <i data-lucide="chevron-right"
+                            class="h-5 w-5 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-[#1649d8]"></i>
                     </a>
-                    <a data-template-id="mobile-nav-contact"
-                        class="canva-link group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] transition hover:bg-blue-50/80 active:bg-blue-100/60"
-                        href="#contact"
-                        style="color: rgb(7, 20, 47); font-weight: 600; font-style: normal; font-size: 18px;">
+                    <a class="group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[#07142f] transition hover:bg-blue-50/80 active:bg-blue-100/60"
+                        href="#contact">
                         <span class="flex items-center gap-3.5">
-                            <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-[#1649d8] group-hover:bg-[#1649d8] group-hover:text-white transition">06</span>
+                            <span
+                                class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-xs font-bold text-[#1649d8] group-hover:bg-[#1649d8] group-hover:text-white transition">06</span>
                             <span class="display-font text-xl font-bold tracking-tight">Contact</span>
                         </span>
-                        <i data-lucide="chevron-right" class="h-5 w-5 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-[#1649d8]"></i>
+                        <i data-lucide="chevron-right"
+                            class="h-5 w-5 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-[#1649d8]"></i>
                     </a>
                 </nav>
 
                 <div class="mt-6 pt-5 border-t border-blue-100/80 flex flex-col gap-3.5">
-                    <a data-template-id="mobile-nav-cta"
-                        class="canva-button flex items-center justify-center gap-2 rounded-2xl bg-[#1649d8] px-5 py-4 text-base font-bold text-white shadow-md shadow-blue-600/20 transition hover:bg-[#0d36ae] active:scale-[0.98]"
-                        href="#contact"
-                        style="background: rgb(22, 73, 216); color: rgb(255, 255, 255); font-weight: 700;">
+                    <a class="flex items-center justify-center gap-2 rounded-2xl bg-[#1649d8] px-5 py-4 text-base font-bold text-white shadow-md shadow-blue-600/20 transition hover:bg-[#0d36ae] active:scale-[0.98]"
+                        href="#contact">
                         <span>Start a Project</span>
                         <i data-lucide="arrow-right" class="h-4 w-4" aria-hidden="true"></i>
                     </a>
@@ -450,57 +814,161 @@
                     </div>
 
                     <div class="flex items-center justify-center gap-4 pt-1 text-xs font-medium text-slate-500">
-                        <a href="https://linkedin.com/in/stephen-wasswa" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 hover:text-[#1649d8] transition"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>LinkedIn</a>
+                        <a href="https://linkedin.com/in/stephen-wasswa" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-1.5 hover:text-[#1649d8] transition"><i
+                                class="fa-brands fa-linkedin-in" aria-hidden="true"></i>LinkedIn</a>
                         <span class="text-slate-300">•</span>
-                        <a href="https://github.com/Wasswa-Phen" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 hover:text-[#1649d8] transition"><i class="fa-brands fa-github" aria-hidden="true"></i>GitHub</a>
+                        <a href="https://github.com/Wasswa-Phen" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-1.5 hover:text-[#1649d8] transition"><i
+                                class="fa-brands fa-github" aria-hidden="true"></i>GitHub</a>
                         <span class="text-slate-300">•</span>
-                        <a href="https://instagram.com/wasswa_phen" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 hover:text-[#1649d8] transition"><i class="fa-brands fa-instagram" aria-hidden="true"></i>Instagram</a>
+                        <a href="https://instagram.com/wasswa_phen" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-1.5 hover:text-[#1649d8] transition"><i
+                                class="fa-brands fa-instagram" aria-hidden="true"></i>Instagram</a>
                     </div>
                 </div>
             </div>
         </div>
+
         <main>
-            <section id="home" class="grid-texture relative overflow-hidden bg-[#07142f]">
-                <div class="hero-orbit" aria-hidden="true"></div>
+            <!-- =========================================================
+                 REDESIGNED HERO SECTION — PHENY: Digital Craft in Motion
+                 ========================================================= -->
+            <section id="home" class="hero-section">
+                <!-- Deliberate Visual System Background -->
+                <div class="hero-bg-system" aria-hidden="true">
+                    <div class="hero-grid-canvas"></div>
+                    <div class="hero-radial-glow"></div>
+                    <div class="hero-ambient-left"></div>
+                    <div class="hero-tech-line"></div>
+                </div>
+
                 <div
-                    class="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 sm:py-20 lg:grid-cols-[1.12fr_.88fr] lg:px-8 lg:py-24">
-                    <div class="max-w-3xl">
-                        <p data-template-id="hero-kicker"
-                            class="canva-tag reveal mb-6 inline-flex rounded-full border border-cyan-300/40 bg-cyan-300/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#2de5ff]"
-                            style="background: rgba(45, 229, 255, 0.098); color: rgb(45, 229, 255); font-weight: 700; font-style: normal; font-size: 16px;">
-                            Creative Technologist · Kampala, Uganda</p>
-                        <h1 data-template-id="hero-name"
-                            class="canva-text display-font reveal delay-1 max-w-3xl text-5xl font-extrabold leading-[.95] tracking-[-.065em] text-white sm:text-7xl lg:text-8xl"
-                            style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 32px;">
-                            WASSWA STEPHEN</h1>
-                        <p data-template-id="hero-role"
-                            class="canva-text reveal delay-2 mt-7 text-sm font-bold tracking-[0.12em] text-[#aebfea] sm:text-base"
-                            style="color: rgb(174, 191, 234); font-weight: 700; font-style: normal; font-size: 16px;">
-                            PHENY — GRAPHICS • WEB • UI/UX DESIGNER</p>
-                        <p data-template-id="hero-tagline"
-                            class="canva-text reveal delay-3 mt-6 max-w-xl text-lg leading-8 text-[#e5ecff] sm:text-xl"
-                            style="color: rgb(229, 236, 255); font-weight: 400; font-style: normal; font-size: 16px;">
-                            Creative digital experiences engineered with clarity, purpose and excellence.</p>
-                        <div class="reveal delay-3 mt-9 flex flex-wrap gap-4"><a data-template-id="hero-services-button"
-                                class="canva-button inline-flex items-center gap-2 rounded-full bg-[#2de5ff] px-6 py-4 text-sm font-bold text-[#07142f] transition hover:-translate-y-0.5 hover:bg-white"
-                                href="#services"
-                                style="background: rgb(45, 229, 255); color: rgb(7, 20, 47); font-weight: 700; font-style: normal; font-size: 16px;">View
-                                Services</a> <a data-template-id="hero-contact-button"
-                                class="canva-button inline-flex items-center gap-2 rounded-full border border-white/35 px-6 py-4 text-sm font-bold text-white transition hover:border-[#2de5ff] hover:text-[#2de5ff]"
-                                href="#contact"
-                                style="background: transparent; color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 16px;">Contact
-                                Me</a>
+                    class="relative z-10 mx-auto max-w-7xl px-5 pt-12 pb-14 sm:pt-16 sm:pb-20 lg:px-8 lg:pt-20 lg:pb-24">
+                    <div class="grid items-center gap-12 lg:grid-cols-[1.12fr_.88fr] lg:gap-14">
+                        <!-- Left: Typography, Identity & Actions -->
+                        <div class="max-w-2xl lg:max-w-none">
+                            <!-- Kicker / Status Indicator -->
+                            <div
+                                class="anim-load anim-delay-kicker inline-flex items-center gap-3 rounded-full border border-[#2de5ff]/30 bg-[#2de5ff]/[0.08] px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[#2de5ff] backdrop-blur-sm">
+                                <span class="status-pulse-dot" aria-hidden="true"></span>
+                                <span>Creative Technologist · Kampala, Uganda</span>
+                            </div>
+
+                            <!-- Monumental Main Heading -->
+                            <h1 class="hero-headline display-font mt-6 text-white font-extrabold uppercase">
+                                <span class="anim-load anim-delay-title-1 block">WASSWA</span>
+                                <span class="anim-load anim-delay-title-2 block text-gradient-hero">STEPHEN<span
+                                        class="text-[#2de5ff]">.</span></span>
+                            </h1>
+
+                            <!-- Professional Identity Label -->
+                            <div
+                                class="anim-load anim-delay-identity mt-6 flex flex-wrap items-center gap-2.5 text-sm sm:text-base font-bold tracking-[0.12em] uppercase">
+                                <span class="inline-flex items-center gap-2 text-white font-extrabold">
+                                    <span class="h-1.5 w-1.5 rounded-full bg-[#2de5ff]"></span>
+                                    <span>PHENY</span>
+                                </span>
+                                <span class="text-[#2de5ff]/60">—</span>
+                                <span class="text-[#c7d7f7]">Visual Design · Web · UI/UX · Engineering</span>
+                            </div>
+
+                            <!-- Supporting Statement -->
+                            <p
+                                class="anim-load anim-delay-statement mt-6 max-w-xl text-base sm:text-lg lg:text-xl font-normal leading-relaxed text-[#d6e2fc]">
+                                I turn ideas into thoughtful digital experiences through design, technology, and
+                                purposeful problem-solving.
+                            </p>
+
+                            <!-- Primary & Secondary Calls to Action -->
+                            <div class="anim-load anim-delay-actions mt-9 flex flex-wrap items-center gap-4">
+                                <a href="#work" class="hero-btn-primary group">
+                                    <span>EXPLORE MY WORK</span>
+                                    <i data-lucide="arrow-down-right"
+                                        class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5"
+                                        aria-hidden="true"></i>
+                                </a>
+                                <a href="#contact" class="hero-btn-secondary group">
+                                    <span>LET'S CONNECT</span>
+                                    <i data-lucide="arrow-right"
+                                        class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                                        aria-hidden="true"></i>
+                                </a>
+                            </div>
+
+                            <!-- Technical Meta Strip -->
+                            <div
+                                class="anim-load anim-delay-meta mt-12 flex flex-wrap items-center gap-6 border-t border-white/10 pt-6 text-xs text-[#8ea4cc]">
+                                <div class="flex items-center gap-2">
+                                    <span
+                                        class="font-mono text-[10px] font-bold tracking-wider text-[#2de5ff]">FOCUS</span>
+                                    <span class="font-medium text-white/90">Craft &amp; Systems</span>
+                                </div>
+                                <span class="text-white/20">•</span>
+                                <div class="flex items-center gap-2">
+                                    <span
+                                        class="font-mono text-[10px] font-bold tracking-wider text-[#2de5ff]">DISCIPLINES</span>
+                                    <span class="font-medium text-white/90">Design + Code</span>
+                                </div>
+                                <span class="text-white/20">•</span>
+                                <div class="flex items-center gap-2">
+                                    <span
+                                        class="font-mono text-[10px] font-bold tracking-wider text-[#2de5ff]">LOCATION</span>
+                                    <span class="font-medium text-white/90">Kampala, UG</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Professional Portrait Integrated Stage -->
+                        <div class="relative mx-auto w-full max-w-md lg:max-w-none">
+                            <div class="hero-portrait-stage anim-portrait">
+                                <!-- Ambient glow bloom behind portrait -->
+                                <div class="portrait-ambient-glow" aria-hidden="true"></div>
+
+                                <!-- Architectural Portrait Frame -->
+                                <div class="portrait-viewport">
+                                    <!-- Subtle Registration Marks -->
+                                    <div class="frame-tag frame-tag-tl" aria-hidden="true">+</div>
+                                    <div class="frame-tag frame-tag-tr" aria-hidden="true">+</div>
+
+                                    <img src="Wasswa Stephen.png" alt="Professional portrait of Wasswa Stephen"
+                                        width="1024" height="1024" class="portrait-img" loading="eager"
+                                        fetchpriority="high">
+
+                                    <!-- Bottom Vignette Gradient dissolving into dark background -->
+                                    <div class="portrait-vignette" aria-hidden="true"></div>
+                                </div>
+
+                                <!-- Floating Status Pill -->
+                                <div class="portrait-status-pill">
+                                    <span class="status-pulse-dot" aria-hidden="true"></span>
+                                    <div class="status-text-wrap">
+                                        <span class="status-pill-title">Available for Projects</span>
+                                        <span class="status-pill-sub">Design &amp; Development</span>
+                                    </div>
+                                </div>
+
+                                <!-- Technical Corner Tag -->
+                                <div class="portrait-index-tag" aria-hidden="true">
+                                    <span class="index-num">01</span>
+                                    <span class="index-sep">/</span>
+                                    <span class="index-title">PHENY</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="relative mx-auto w-full max-w-md lg:max-w-none">
-                        <div
-                            class="absolute -left-4 top-8 z-10 rounded-full border border-[#2de5ff]/50 bg-[#07142f] px-4 py-2 text-[10px] font-bold tracking-[.2em] text-[#2de5ff] sm:-left-8">
-                            PHENY / 01
-                        </div>
-                        <div class="portrait-frame"><img data-template-id="hero-portrait" class="canva-image"
-                                loading="lazy" src="Wasswa Stephen.png"
-                                alt="Professional portrait of Wasswa Makubuya Stephen wearing a blue suit">
-                        </div>
+
+                    <!-- Subtle Scroll Indicator -->
+                    <div class="anim-load anim-delay-scroll mt-14 flex justify-center lg:justify-start">
+                        <a href="#about" class="hero-scroll-link group" aria-label="Scroll to about section">
+                            <span class="scroll-track">
+                                <span class="scroll-thumb"></span>
+                            </span>
+                            <span class="scroll-text">SCROLL TO EXPLORE</span>
+                            <i data-lucide="arrow-down"
+                                class="h-3.5 w-3.5 text-[#2de5ff] transition-transform duration-300 group-hover:translate-y-0.5"
+                                aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -667,12 +1135,15 @@
                                 class="group relative flex flex-col items-center justify-center w-full h-full min-h-[280px] sm:min-h-[340px] rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-6 sm:p-8 text-center transition-all duration-300 hover:border-[#2de5ff]/50 hover:bg-white/[0.1] hover:shadow-[0_0_35px_rgba(45,229,255,0.2)]"
                                 aria-label="Visit T&T Junior School website">
                                 <div class="relative flex items-center justify-center">
-                                    <div class="absolute -inset-4 rounded-full bg-[#2de5ff]/15 blur-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                                    <div
+                                        class="absolute -inset-4 rounded-full bg-[#2de5ff]/15 blur-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                                    </div>
                                     <img src="tandtSchoolLogo.png" alt="T & T Junior School Logo"
                                         class="relative max-h-48 sm:max-h-56 w-auto object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.4)] transition-transform duration-300 group-hover:scale-105"
                                         loading="lazy">
                                 </div>
-                                <span class="mt-6 inline-flex items-center gap-2 rounded-full border border-[#2de5ff]/40 bg-[#07142f]/80 px-4 py-2 text-xs font-bold text-[#2de5ff] backdrop-blur transition-all duration-300 group-hover:bg-[#2de5ff] group-hover:text-[#07142f]">
+                                <span
+                                    class="mt-6 inline-flex items-center gap-2 rounded-full border border-[#2de5ff]/40 bg-[#07142f]/80 px-4 py-2 text-xs font-bold text-[#2de5ff] backdrop-blur transition-all duration-300 group-hover:bg-[#2de5ff] group-hover:text-[#07142f]">
                                     <span>Visit tandtjuniorschool.com</span>
                                     <i data-lucide="external-link" class="h-3.5 w-3.5"></i>
                                 </span>
@@ -782,8 +1253,10 @@
                             inquiry below.</p>
                         <address class="mt-10 not-italic">
                             <div class="mb-6 flex items-start gap-3.5">
-                                <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#25D366]/10">
-                                    <i class="fa-brands fa-whatsapp contact-icon-brand" style="color: #25D366;" aria-hidden="true"></i>
+                                <span
+                                    class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#25D366]/10">
+                                    <i class="fa-brands fa-whatsapp contact-icon-brand" style="color: #25D366;"
+                                        aria-hidden="true"></i>
                                 </span>
                                 <div>
                                     <p data-template-id="contact-whatsapp-label"
@@ -798,8 +1271,10 @@
                                 </div>
                             </div>
                             <div class="mb-6 flex items-start gap-3.5">
-                                <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#FFCC00]/10">
-                                    <i class="fa-solid fa-phone contact-icon-brand" style="color: #1649d8;" aria-hidden="true"></i>
+                                <span
+                                    class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#FFCC00]/10">
+                                    <i class="fa-solid fa-phone contact-icon-brand" style="color: #1649d8;"
+                                        aria-hidden="true"></i>
                                 </span>
                                 <div>
                                     <p data-template-id="contact-mtn-label"
@@ -813,7 +1288,8 @@
                                 </div>
                             </div>
                             <div class="flex items-start gap-3.5">
-                                <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#1649d8]/10">
+                                <span
+                                    class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#1649d8]/10">
                                     <i class="fa-solid fa-envelope contact-icon-brand" aria-hidden="true"></i>
                                 </span>
                                 <div>
@@ -831,29 +1307,34 @@
                             <div class="flex flex-wrap gap-3">
                                 <a data-template-id="social-whatsapp"
                                     class="canva-link social-pill inline-flex items-center gap-2.5 rounded-full border border-blue-100 bg-white px-5 py-2.5 text-sm font-bold text-[#1649d8]"
-                                    href="https://wa.me/256701951404" target="_blank"
-                                    rel="noopener noreferrer" aria-label="WhatsApp"
-                                    style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>WhatsApp</a>
+                                    href="https://wa.me/256701951404" target="_blank" rel="noopener noreferrer"
+                                    aria-label="WhatsApp"
+                                    style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;"><i
+                                        class="fa-brands fa-whatsapp" aria-hidden="true"></i>WhatsApp</a>
                                 <a data-template-id="social-linkedin"
                                     class="canva-link social-pill inline-flex items-center gap-2.5 rounded-full border border-blue-100 bg-white px-5 py-2.5 text-sm font-bold text-[#1649d8]"
                                     href="https://linkedin.com/in/stephen-wasswa" target="_blank"
                                     rel="noopener noreferrer" aria-label="LinkedIn profile"
-                                    style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>LinkedIn</a>
+                                    style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;"><i
+                                        class="fa-brands fa-linkedin-in" aria-hidden="true"></i>LinkedIn</a>
                                 <a data-template-id="social-github"
                                     class="canva-link social-pill inline-flex items-center gap-2.5 rounded-full border border-blue-100 bg-white px-5 py-2.5 text-sm font-bold text-[#1649d8]"
                                     href="https://github.com/Wasswa-Phen" target="_blank" rel="noopener noreferrer"
                                     aria-label="GitHub profile"
-                                    style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;"><i class="fa-brands fa-github" aria-hidden="true"></i>GitHub</a>
+                                    style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;"><i
+                                        class="fa-brands fa-github" aria-hidden="true"></i>GitHub</a>
                                 <a data-template-id="social-instagram"
                                     class="canva-link social-pill inline-flex items-center gap-2.5 rounded-full border border-blue-100 bg-white px-5 py-2.5 text-sm font-bold text-[#1649d8]"
                                     href="https://instagram.com/wasswa_phen" target="_blank" rel="noopener noreferrer"
                                     aria-label="Instagram profile"
-                                    style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;"><i class="fa-brands fa-instagram" aria-hidden="true"></i>Instagram</a>
+                                    style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;"><i
+                                        class="fa-brands fa-instagram" aria-hidden="true"></i>Instagram</a>
                                 <a data-template-id="social-facebook"
                                     class="canva-link social-pill inline-flex items-center gap-2.5 rounded-full border border-blue-100 bg-white px-5 py-2.5 text-sm font-bold text-[#1649d8]"
                                     href="https://facebook.com/WasswaPhenDaniel" target="_blank"
                                     rel="noopener noreferrer" aria-label="Facebook profile"
-                                    style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i>Facebook</a>
+                                    style="background: rgb(255, 255, 255); color: rgb(22, 73, 216); font-weight: 700; font-style: normal; font-size: 16px;"><i
+                                        class="fa-brands fa-facebook-f" aria-hidden="true"></i>Facebook</a>
                             </div>
                         </nav>
                     </div>
@@ -907,31 +1388,37 @@
                         class="canva-link footer-social-link inline-flex items-center gap-2 text-xs font-semibold text-[#b9c8ed] hover:text-[#2de5ff] transition"
                         href="https://linkedin.com/in/stephen-wasswa" target="_blank" rel="noopener noreferrer"
                         aria-label="LinkedIn profile"
-                        style="color: rgb(185, 200, 237); font-weight: 600; font-style: normal; font-size: 16px;"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>LinkedIn</a>
+                        style="color: rgb(185, 200, 237); font-weight: 600; font-style: normal; font-size: 16px;"><i
+                            class="fa-brands fa-linkedin-in" aria-hidden="true"></i>LinkedIn</a>
                     <a data-template-id="footer-github"
                         class="canva-link footer-social-link inline-flex items-center gap-2 text-xs font-semibold text-[#b9c8ed] hover:text-[#2de5ff] transition"
                         href="https://github.com/Wasswa-Phen" target="_blank" rel="noopener noreferrer"
                         aria-label="GitHub profile"
-                        style="color: rgb(185, 200, 237); font-weight: 600; font-style: normal; font-size: 16px;"><i class="fa-brands fa-github" aria-hidden="true"></i>GitHub</a>
+                        style="color: rgb(185, 200, 237); font-weight: 600; font-style: normal; font-size: 16px;"><i
+                            class="fa-brands fa-github" aria-hidden="true"></i>GitHub</a>
                     <a data-template-id="footer-instagram"
                         class="canva-link footer-social-link inline-flex items-center gap-2 text-xs font-semibold text-[#b9c8ed] hover:text-[#2de5ff] transition"
                         href="https://instagram.com/wasswa_phen" target="_blank" rel="noopener noreferrer"
                         aria-label="Instagram profile"
-                        style="color: rgb(185, 200, 237); font-weight: 600; font-style: normal; font-size: 16px;"><i class="fa-brands fa-instagram" aria-hidden="true"></i>Instagram</a>
+                        style="color: rgb(185, 200, 237); font-weight: 600; font-style: normal; font-size: 16px;"><i
+                            class="fa-brands fa-instagram" aria-hidden="true"></i>Instagram</a>
                     <a data-template-id="footer-facebook"
                         class="canva-link footer-social-link inline-flex items-center gap-2 text-xs font-semibold text-[#b9c8ed] hover:text-[#2de5ff] transition"
                         href="https://facebook.com/WasswaPhenDaniel" target="_blank" rel="noopener noreferrer"
                         aria-label="Facebook profile"
-                        style="color: rgb(185, 200, 237); font-weight: 600; font-style: normal; font-size: 16px;"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i>Facebook</a>
+                        style="color: rgb(185, 200, 237); font-weight: 600; font-style: normal; font-size: 16px;"><i
+                            class="fa-brands fa-facebook-f" aria-hidden="true"></i>Facebook</a>
                     <a data-template-id="footer-email"
                         class="canva-link footer-social-link inline-flex items-center gap-2 text-xs font-semibold text-[#b9c8ed] hover:text-[#2de5ff] transition"
                         href="mailto:wasswastephen24@gmail.com" aria-label="Email PHENY"
-                        style="color: rgb(185, 200, 237); font-weight: 600; font-style: normal; font-size: 16px;"><i class="fa-solid fa-envelope" aria-hidden="true"></i>Email</a>
+                        style="color: rgb(185, 200, 237); font-weight: 600; font-style: normal; font-size: 16px;"><i
+                            class="fa-solid fa-envelope" aria-hidden="true"></i>Email</a>
                     <a data-template-id="footer-phone"
                         class="canva-link footer-social-link inline-flex items-center gap-2 text-xs font-semibold text-[#b9c8ed] hover:text-[#2de5ff] transition"
                         href="https://wa.me/256701951404" target="_blank" rel="noopener noreferrer"
                         aria-label="WhatsApp PHENY"
-                        style="color: rgb(185, 200, 237); font-weight: 600; font-style: normal; font-size: 16px;"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>WhatsApp</a>
+                        style="color: rgb(185, 200, 237); font-weight: 600; font-style: normal; font-size: 16px;"><i
+                            class="fa-brands fa-whatsapp" aria-hidden="true"></i>WhatsApp</a>
                 </nav>
             </div>
         </footer>
@@ -996,7 +1483,7 @@
 
             // Google Apps Script Web App URL for direct Gmail dispatch:
             // Paste your deployed script URL here (e.g. "https://script.google.com/macros/s/.../exec")
-            const GOOGLE_SCRIPT_URL = "";
+            const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyrB9bh0K9ZrwxAG4yKNEXuwapAk04Aa56mRMX_h6dCXZoP54LdEUwH1793dcue1Uw2/exec";
 
             function setStatus(message, type) {
                 status.textContent = message;
